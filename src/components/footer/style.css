@@ -1,0 +1,15 @@
+.footer-container {
+    /* border: 1px solid green; */
+    padding-top: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--var-color_white);
+    /* border-top: indigo 1px; */
+}
+.footer-article {
+    /* border: 1px solid blue; */
+    height: 5rem;
+}

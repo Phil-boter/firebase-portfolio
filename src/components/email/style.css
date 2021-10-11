@@ -1,0 +1,91 @@
+.contact-form-container {
+    height: 90vh;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-form-inner-container {
+    min-width: 40%;
+    padding: 1rem;
+    background-color: var(--var-color_white);
+    overscroll-behavior: contain;
+}
+.alert {
+    text-align: center;
+}
+.alert-text {
+    margin: 2rem;
+}
+
+.contact-form-header {
+    padding: 3rem 0;
+    font-size: 1.5rem;
+}
+.contact-form {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form-input {
+    margin: 0.7rem 0;
+    padding: 0.3rem;
+}
+.contact-form-textarea {
+    font-size: 1.1rem;
+    margin: 0.7rem 0;
+    padding: 0.3rem;
+}
+
+.button-contact-form {
+    margin: 0.4rem auto;
+    border: 3px solid black;
+    background-color: transparent;
+    text-decoration: none;
+    width: 10rem;
+    text-align: center;
+    padding: 0.3rem;
+    font-weight: 800;
+    color: black;
+    margin-bottom: 2rem;
+}
+.send {
+    z-index: 10;
+}
+
+.button-contact-form:hover {
+    color: var(--var-color_white);
+    background-color: black;
+}
+.ohnohoney {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+}
+.success-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10rem;
+}
+.success-modal button {
+    margin: 1.5rem;
+}
+@media only screen and (max-width: 680px) {
+    .contact-form-container {
+        height: 200%;
+        align-items: unset;
+    }
+    .contact-form-inner-container {
+        margin-top: 5rem;
+        margin-bottom: auto;
+        min-height: 100vh;
+    }
+}

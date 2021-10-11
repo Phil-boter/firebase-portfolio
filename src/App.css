@@ -4,18 +4,17 @@
     --var-color_three: #ffffee;
     --var-color_gray: rgb(247, 247, 247);
     --var-color_footer: rgb(240, 240, 240);
-    --var-color_green: #00ff96;
+    --var-color_green: rgb(0, 64, 77);
     --var-color_white: white;
     --var-color_black: black;
     --var-color_projectHeader: rgb(218, 38, 205);
-    --var-color_headline: yellow;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Montserrat;
+    font-family: Heebo, Montserrat, Arial, Vollkorn, Helvetica, sans-serif;
     list-style: none;
     font-size: 16px;
 }

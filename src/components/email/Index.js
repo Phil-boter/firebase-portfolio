@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useContext } from "react";
+
 import { send } from "emailjs-com";
 import { UserID, ServiceID, TemplateID } from "../../Firebase/secrets.json";
 
-import emailSlider from "../helpers/emailContactAnimation";
-import removeEmailSlider from "../helpers/removeEmailSlider";
+import { LanguageContext } from "../../context/LanguageProvider";
+import "./style.css";
 
 export default function Email({ setSendMail }) {
+    const { language, setLanguage, toggleLanguage } =
+        useContext(LanguageContext);
+
     const [honey, setHoneypot] = useState(false);
     const [text, setText] = useState(null);
     const [requiredField, setRequired] = useState(null);
@@ -27,7 +31,7 @@ export default function Email({ setSendMail }) {
         e.preventDefault();
         if (honey === true) {
             // console.log("trapped in honeypot");
-            closeContactForm();
+            // closeContactForm();
             return;
         } else if (
             toSend.name === "" ||
@@ -35,47 +39,84 @@ export default function Email({ setSendMail }) {
             toSend.Title === "" ||
             toSend.message === ""
         ) {
-            setRequired("please fill out every field!");
+            setRequired(input.required);
         } else {
             send(ServiceID, TemplateID, toSend, UserID).then(
                 (result) => {
                     // console.log("Email was send", result.text);
-                    window.scrollTo(0, 0);
-                    setText("Your email was successfully sent");
+                    // window.scrollTo(0, 0);
+                    setText(input.success);
                 },
                 (error) => {
                     // console.log("email sending failed", error.text);
 
-                    setText("That did not work. Please try again later!");
+                    setText(input.fail);
                 }
             );
         }
     };
 
-    function closeContactForm() {
-        removeEmailSlider();
-        setTimeout(() => {
-            setSendMail(false);
-        }, 900);
-    }
+    const resetForm = (e) => {
+        e.preventDefault();
+        document.getElementById("reset").reset();
+        setRequired(false);
+        setToSend({
+            name: "",
+            email: "",
+            Title: "",
+            message: "",
+        });
+    };
+
     const honeypot = (e) => {
         // console.log("honeypot");
         e.preventDefault();
         setHoneypot(true);
     };
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        emailSlider();
-    }, []);
+    const closeContactForm = (e) => {
+        e.preventDefault();
+        setText(null);
+    };
+
+    let input = {};
+    if (language === "en") {
+        input = {
+            title: "Title",
+            text: "Write your message here",
+            submit: "Submit",
+            reset: "Reset",
+            success: "Your email was successfully sent",
+            fail: "That did not work. Please try again later!",
+            required: "Please fill out every field!",
+        };
+    } else {
+        input = {
+            title: "Titel",
+            text: "Schreibe deine Nachricht hier",
+            submit: "Absenden",
+            reset: "Löschen",
+            success: "Deine Email wurde erfolgreich verschickt!",
+            fail: "Das hat leider nicht funktioniert! Versuche es bitte später erneut",
+            required: "Bitte fülle jedes Feld aus!",
+        };
+    }
 
     return (
         <>
             <div className="contact-form-container" id="contact-form-container">
                 <div className="contact-form-inner-container" id="emailSlider">
-                    {/* <h1 className="contact-form-header">Email Contact</h1> */}
+                    {language === "en" ? (
+                        <h1 className="contact-form-header">
+                            {"Get in contact".toUpperCase()}
+                        </h1>
+                    ) : (
+                        <h1 className="contact-form-header">
+                            {"schreibe mir eine Email".toUpperCase()}
+                        </h1>
+                    )}
                     {!text ? (
-                        <form className="contact-form">
+                        <form className="contact-form" id="reset">
                             {/* real fields */}
                             <label>Name</label>
                             <input
@@ -104,41 +145,42 @@ export default function Email({ setSendMail }) {
                                 className="contact-form-input"
                                 type="text"
                                 name="Title"
-                                placeholder="Subject"
+                                placeholder={input.title}
                                 required
                                 value={toSend.Title}
                                 onChange={handleChange}
                             />
-                            <label>Message</label>
+
+                            {language === "en" ? (
+                                <label>Message</label>
+                            ) : (
+                                <label>Nachricht</label>
+                            )}
+
                             <textarea
                                 className="contact-form-input contact-form-textarea"
                                 name="message"
                                 rows="9"
                                 // cols="33"
-                                placeholder="Write your message here"
+                                placeholder={input.text}
                                 required
                                 value={toSend.message}
                                 onChange={handleChange}
                             />
-                            {/* <input
-							className="button-contact-form send"
-							type="submit"
-							value="Send"
-						/> */}
+
                             {requiredField}
                             <button
                                 onClick={(e) => onSubmit(e)}
                                 className="button-contact-form send"
                             >
-                                Submit
+                                {input.submit}
                             </button>
-
-                            <input
+                            <button
+                                onClick={(e) => resetForm(e)}
                                 className="button-contact-form"
-                                type="reset"
-                                value="Reset"
-                                onClick={() => closeContactForm()}
-                            />
+                            >
+                                {input.reset}
+                            </button>
                             {/* HONEYPOT */}
                             <label className="ohnohoney"></label>
                             <input
@@ -163,7 +205,10 @@ export default function Email({ setSendMail }) {
                     ) : (
                         <div className="success-modal">
                             {text}
-                            <button onClick={() => closeContactForm()}>
+                            <button
+                                onClick={(e) => closeContactForm(e)}
+                                className="button-contact-form"
+                            >
                                 Ok
                             </button>
                         </div>

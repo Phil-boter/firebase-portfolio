@@ -1,5 +1,6 @@
 .projects-main-container {
     padding: 2rem 2rem;
+    max-width: 98vw;
 }
 .projects-main-container h1 {
     font-family: "Heebo", "Arial";
@@ -13,17 +14,7 @@
     text-decoration: none;
     color: var(--var-color_black);
 }
-/* 
-.singleproject-image {
-}
-.singleproject-header {
-}
-.singleproject-title {
-}
-.title2 {
-}
-.singleproject-link {
-} */
+
 @media only screen and (max-width: 650px) {
     .singleproject-inner-container {
         display: flex;
@@ -55,7 +46,4 @@
 
     .title2 {
     }
-    /*
-    .singleproject-link {
-    } */
 }

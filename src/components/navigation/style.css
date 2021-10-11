@@ -8,19 +8,19 @@
     background: var(--var-color_white);
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
+    padding: 0px 25px;
     height: 80px;
-    z-index: 100;
     width: 100vw;
-    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 101;
 }
 .language-label {
     display: flex;
     font-weight: 700;
     font-size: 1.3rem;
     position: absolute;
-    right: 1rem;
-    z-index: 100;
+    right: 2.5rem;
+    z-index: 101;
 }
 .logo-nav {
     display: flex;
@@ -33,6 +33,7 @@
     align-items: center;
     justify-content: center;
     color: var(--var-color_black);
+    margin-right: 1rem;
 }
 .logo-container a {
     color: var(--var-color_black);
@@ -53,6 +54,8 @@
 .logo-first::after {
     content: attr(data-end);
     font-size: 36px;
+    position: absolute;
+    transform: rotate(360deg) scaleX(-1);
 }
 .logo-last {
     position: absolute;
@@ -66,6 +69,9 @@
     grid-template-columns: repeat(3, auto);
     grid-gap: 50px;
     list-style-type: none;
+}
+.option {
+    width: 7rem;
 }
 .option .mobile-option {
     display: none;
@@ -125,11 +131,14 @@
         padding: 0px 10px;
     }
     .logo-last {
-        left: 42px;
+        left: 37px;
     }
     .logo {
         width: 45px;
         height: 45px;
+    }
+    .option {
+        width: unset;
     }
     .option a {
         font-size: 2.3rem;
@@ -157,7 +166,7 @@
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
-        z-index: 1;
+
         align-content: center;
         padding-left: 0px;
     }
