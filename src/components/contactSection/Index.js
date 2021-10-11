@@ -1,23 +1,15 @@
-import { useState, useContext } from "react";
-import { LanguageContext } from "../../context/LanguageProvider";
+import "./style.css";
 
-export default function ContactSection({ initialState }) {
-    const { language, setLanguage, toggleLanguage } =
-        useContext(LanguageContext);
-    // const [show, setSendMail] = useState(false);
-    // const showEmailForm = (e) => {
-    //     e.preventDefault();
-    //     setSendMail(true);
-    // };
+export default function ContactSection({ language }) {
     return (
         <>
             <section className="section">
-                <article className="about contact">
-                    <h1 className="article-headline">
-                        {language === "en"
-                            ? "contact".toUpperCase()
-                            : "kontakt".toUpperCase()}{" "}
-                    </h1>
+                <h1 className="main-header">
+                    {language === "en"
+                        ? "contact".toUpperCase()
+                        : "kontakt".toUpperCase()}{" "}
+                </h1>
+                <article className="section-article">
                     <article>
                         {language === "en"
                             ? "Find my code and my latest projects on"
@@ -87,7 +79,8 @@ export default function ContactSection({ initialState }) {
                     </article>
                 </article>
             </section>
-            {/* {show && <SendMail setSendMail={setSendMail} />} */}
+            {/* make section bottom curvy */}
+            <div className="border-bottom"></div>
         </>
     );
 }

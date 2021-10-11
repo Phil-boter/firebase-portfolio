@@ -6,9 +6,8 @@ import { UserID, ServiceID, TemplateID } from "../../Firebase/secrets.json";
 import { LanguageContext } from "../../context/LanguageProvider";
 import "./style.css";
 
-export default function Email({ setSendMail }) {
-    const { language, setLanguage, toggleLanguage } =
-        useContext(LanguageContext);
+export default function Email({ setClick }) {
+    const { language } = useContext(LanguageContext);
 
     const [honey, setHoneypot] = useState(false);
     const [text, setText] = useState(null);
@@ -66,6 +65,9 @@ export default function Email({ setSendMail }) {
             Title: "",
             message: "",
         });
+        if (setClick) {
+            setClick(false);
+        }
     };
 
     const honeypot = (e) => {
@@ -77,6 +79,9 @@ export default function Email({ setSendMail }) {
     const closeContactForm = (e) => {
         e.preventDefault();
         setText(null);
+        if (setClick) {
+            setClick(false);
+        }
     };
 
     let input = {};
@@ -85,7 +90,7 @@ export default function Email({ setSendMail }) {
             title: "Title",
             text: "Write your message here",
             submit: "Submit",
-            reset: "Reset",
+            reset: "Close",
             success: "Your email was successfully sent",
             fail: "That did not work. Please try again later!",
             required: "Please fill out every field!",
@@ -95,7 +100,7 @@ export default function Email({ setSendMail }) {
             title: "Titel",
             text: "Schreibe deine Nachricht hier",
             submit: "Absenden",
-            reset: "Löschen",
+            reset: "Schliessen",
             success: "Deine Email wurde erfolgreich verschickt!",
             fail: "Das hat leider nicht funktioniert! Versuche es bitte später erneut",
             required: "Bitte fülle jedes Feld aus!",
@@ -107,11 +112,11 @@ export default function Email({ setSendMail }) {
             <div className="contact-form-container" id="contact-form-container">
                 <div className="contact-form-inner-container" id="emailSlider">
                     {language === "en" ? (
-                        <h1 className="contact-form-header">
+                        <h1 className="contact-form-header main-header">
                             {"Get in contact".toUpperCase()}
                         </h1>
                     ) : (
-                        <h1 className="contact-form-header">
+                        <h1 className="contact-form-header main-header">
                             {"schreibe mir eine Email".toUpperCase()}
                         </h1>
                     )}

@@ -1,9 +1,9 @@
 import AboutSection from "../../components/aboutSection";
 
-export default function About() {
+export default function About({ language }) {
     return (
         <>
-            <AboutSection />
+            <AboutSection language={language} />
         </>
     );
 }

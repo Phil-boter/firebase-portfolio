@@ -20,7 +20,6 @@
 
 .contact-form-header {
     padding: 3rem 0;
-    font-size: 1.5rem;
 }
 .contact-form {
     font-size: 1.2rem;
@@ -87,5 +86,6 @@
         margin-top: 5rem;
         margin-bottom: auto;
         min-height: 100vh;
+        max-width: 90%;
     }
 }

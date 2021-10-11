@@ -1,11 +1,13 @@
-export default function AboutSection() {
+export default function AboutSection({ language }) {
     return (
         <>
             <section className="section">
-                <article className="project-section about">
-                    <h1 className="article-headline">
-                        {"about".toUpperCase()}
-                    </h1>
+                <h1 className="main-header">
+                    {language === "en"
+                        ? "about".toUpperCase()
+                        : "Über mich".toUpperCase()}{" "}
+                </h1>
+                <article className="section-article">
                     I am a junior full stack web developer with a background in
                     foodindustry and automotive service. I began my professional
                     career with an apprenticeship as a brewer, where I
@@ -46,6 +48,8 @@ export default function AboutSection() {
                     </span>
                 </article>
             </section>
+            {/* make section bottom curvy */}
+            <div className="border-bottom"></div>
         </>
     );
 }

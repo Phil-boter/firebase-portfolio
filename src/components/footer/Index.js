@@ -1,15 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
-import SendMail from "../email/Index";
+import EmailComponent from "../email/Index";
 
 import "./style.css";
+import { Email } from "@material-ui/icons";
 
-export default function Footer() {
-    const [email, setSendMail] = useState(false);
+export default function Footer({ language }) {
+    const location = useLocation();
+
+    const [click, setClick] = useState(false);
+
+    const handleClick = async (e) => {
+        e.preventDefault();
+        if (location.pathname === "/") {
+            document.getElementById("contact-form-container").scrollIntoView();
+        } else {
+            setClick(true);
+
+            window.scrollTo(0, 0);
+        }
+    };
 
     return (
         <>
+            <div className={click ? "email-modal active-modal" : "email-modal"}>
+                <EmailComponent setClick={setClick} />
+            </div>
+
             <section className="footer-container">
                 <article className="footer-article">
                     <span
@@ -42,9 +60,9 @@ export default function Footer() {
 
                     <span
                         className="link-linkedIn"
-                        onClick={() =>
+                        onClick={(e) =>
                             // window.open("mailto:philipp_dawid@web.de")
-                            setSendMail(true)
+                            handleClick(e)
                         }
                     >
                         <img
@@ -54,8 +72,11 @@ export default function Footer() {
                         />
                     </span>
                 </article>
+
                 <Link to="/contact">
-                    <button>get in Contact</button>
+                    <button className="button">
+                        {language === "en" ? "Get in Contact" : "Kontakt"}
+                    </button>
                 </Link>
             </section>
         </>

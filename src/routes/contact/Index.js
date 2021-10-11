@@ -1,9 +1,9 @@
 import ContactSection from "../../components/contactSection/Index";
 
-export default function Contact() {
+export default function Contact({ language }) {
     return (
         <>
-            <ContactSection />
+            <ContactSection language={language} />
         </>
     );
 }

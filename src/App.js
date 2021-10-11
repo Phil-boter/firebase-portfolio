@@ -38,10 +38,23 @@ function App() {
                     <DataProvider>
                         <Navigation />
 
-                        <Route exact path="/" render={() => <Main />} />
-                        <Route path="/projects" render={() => <Projects />} />
-                        <Route path="/contact" render={() => <Contact />} />
-                        <Route path="/about" render={() => <About />} />
+                        <Route
+                            exact
+                            path="/"
+                            render={() => <Main language={language} />}
+                        />
+                        <Route
+                            path="/projects"
+                            render={() => <Projects language={language} />}
+                        />
+                        <Route
+                            path="/contact"
+                            render={() => <Contact language={language} />}
+                        />
+                        <Route
+                            path="/about"
+                            render={() => <About language={language} />}
+                        />
                         <Route
                             path="/singleProject/:id"
                             render={(props) => (
@@ -50,8 +63,7 @@ function App() {
                                 />
                             )}
                         />
-
-                        <Footer />
+                        <Footer language={language} />
                         <ScrollToTopButton />
                     </DataProvider>
                 </LanguageContext.Provider>

@@ -13,3 +13,30 @@
     /* border: 1px solid blue; */
     height: 5rem;
 }
+
+.email-modal {
+    transition: all 0.7s ease;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 3rem 0;
+    transition: all 0.5s ease;
+    top: -100vh;
+    opacity: 0.4;
+}
+.email-modal.active-modal {
+    background-color: var(--var-color_white);
+    top: 0rem;
+    transition: all 0.7s ease;
+    opacity: 1;
+}
+@media only screen and (max-width: 650px) {
+    .email-modal {
+        top: -130vh;
+    }
+
+    .email-modal.active-modal {
+        top: 3.5rem;
+    }
+}
