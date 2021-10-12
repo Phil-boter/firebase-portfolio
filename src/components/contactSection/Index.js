@@ -3,13 +3,15 @@ import "./style.css";
 export default function ContactSection({ language }) {
     return (
         <>
-            <section className="section">
-                <h1 className="main-header">
-                    {language === "en"
-                        ? "contact".toUpperCase()
-                        : "kontakt".toUpperCase()}{" "}
-                </h1>
-                <article className="section-article">
+            <section className="section ">
+                <div className="main-header contact-header">
+                    <h1>
+                        {language === "en"
+                            ? "contact".toUpperCase()
+                            : "kontakt".toUpperCase()}{" "}
+                    </h1>
+                </div>
+                <div className="section-article">
                     <article>
                         {language === "en"
                             ? "Find my code and my latest projects on"
@@ -80,7 +82,7 @@ export default function ContactSection({ language }) {
                             </p>
                         )}{" "}
                     </article>
-                </article>
+                </div>
             </section>
             {/* make section bottom curvy */}
             <div className="border-bottom"></div>

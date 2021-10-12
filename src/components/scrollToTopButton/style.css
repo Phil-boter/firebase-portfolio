@@ -1,7 +1,7 @@
 .scroll-top-button-container {
     position: sticky;
     bottom: 1rem;
-    left: 85%;
+    left: 95%;
     width: 50px;
     z-index: 100;
 }
@@ -18,10 +18,15 @@
     padding: 0.5rem;
     border-radius: 50%;
 }
+@media only screen and (max-width: 1400px) {
+    .scroll-top-button-container {
+        left: 85%;
+    }
+}
 
 @media only screen and (max-width: 650px) {
     .scroll-top-button-container {
-        left: 80%;
+        left: 78%;
     }
 }
 @media only screen and (max-width: 376px) {

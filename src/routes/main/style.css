@@ -1,7 +1,7 @@
 .main-section {
     min-height: 70vh;
-    padding: 2em;
     margin: auto;
+
     background-color: var(--var-color_green);
 }
 body::-webkit-scrollbar {
@@ -63,13 +63,13 @@ header {
 
 .container_solid .title_wrapper h1 {
     /* the text background */
-    /* background-image: url(/assets/milkMed.jpg); */
+    background-image: url(../../assets/milkMed.jpg);
     background-size: 100vw auto;
     background-position: center;
 
     /* clip the text is possible */
-    /* -webkit-text-fill-color: transparent;
-    -webkit-text-fill-color: transparent; */
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
     /* fallback text color */
@@ -79,7 +79,7 @@ header {
 .container_image {
     /* Grab a free image from unsplash */
     background-image: url(../../assets/milkMed.jpg);
-    background-size: 100vw auto;
+    background-size: 100vw 100vh;
     background-position: center;
     background-attachment: fixed;
     /* position the second container below the first container */
@@ -115,9 +115,7 @@ header {
         min-height: 100vh !important;
     }
     .main-section {
-        min-height: 50vh;
-        padding: 2em;
+        min-height: 100vh;
         margin: auto;
-        background-color: var(--var-color_green);
     }
 }

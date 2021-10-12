@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 
 import EmailComponent from "../../components/email/Index";
 import MainPageProjects from "../../components/mainPageProjects/Index";
+import MainPageAbout from "../../components/mainPageAbout/Index";
 import { DataContext } from "../../context/DataProvider";
 
 import "./style.css";
@@ -34,6 +35,7 @@ export default function Main({ language }) {
                 data-index="2"
                 data-page="section"
             >
+                <MainPageAbout language={language} />
                 <MainPageProjects language={language} projects={projects} />
             </section>
             <EmailComponent />

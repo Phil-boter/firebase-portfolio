@@ -19,10 +19,9 @@ export default function MainPageProjects({ projects, language }) {
 
     return (
         <>
-            {" "}
-            <div className="main-header main-project-header">
+            <h1 className="main-header main-project-header">
                 {translation.header.toUpperCase()}
-            </div>
+            </h1>
             <div className="section-main-my-projects-wrapper">
                 <section className="section-main-my-projects">
                     {!projects || projects.projectsData.length === 0 ? (
@@ -34,26 +33,27 @@ export default function MainPageProjects({ projects, language }) {
                                 key={index}
                                 className="project-short-inner-container "
                             >
-                                <figure>
-                                    <Link
-                                        to={`/singleProject/${project.projectId}`}
-                                    >
+                                <Link
+                                    to={`/singleProject/${project.projectId}`}
+                                >
+                                    <figure>
                                         <img
                                             src={project.image}
                                             alt={project.title}
                                         />
-                                    </Link>
-                                    <figcaption>
-                                        <h4>
-                                            {`${project.title}`.toUpperCase()}
-                                        </h4>
-                                        {project.title_second && (
+
+                                        <figcaption>
                                             <h4>
-                                                {`${project.title_second}`.toUpperCase()}
+                                                {`${project.title}`.toUpperCase()}
                                             </h4>
-                                        )}
-                                    </figcaption>
-                                </figure>
+                                            {project.title_second && (
+                                                <h4>
+                                                    {`${project.title_second}`.toUpperCase()}
+                                                </h4>
+                                            )}
+                                        </figcaption>
+                                    </figure>
+                                </Link>
                             </div>
                         ))
                     )}

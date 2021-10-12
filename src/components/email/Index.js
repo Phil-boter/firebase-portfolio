@@ -113,17 +113,17 @@ export default function Email({ setClick }) {
 
     return (
         <>
+            {language === "en" ? (
+                <h1 className="contact-form-header main-header">
+                    {"Get in contact".toUpperCase()}
+                </h1>
+            ) : (
+                <h1 className="contact-form-header main-header">
+                    {"schreibe mir eine Email".toUpperCase()}
+                </h1>
+            )}
             <div className="contact-form-container" id="contact-form-container">
                 <div className="contact-form-inner-container" id="emailSlider">
-                    {language === "en" ? (
-                        <h1 className="contact-form-header main-header">
-                            {"Get in contact".toUpperCase()}
-                        </h1>
-                    ) : (
-                        <h1 className="contact-form-header main-header">
-                            {"schreibe mir eine Email".toUpperCase()}
-                        </h1>
-                    )}
                     {!text ? (
                         <form className="contact-form" id="reset">
                             {/* real fields */}

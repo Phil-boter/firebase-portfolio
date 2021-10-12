@@ -31,9 +31,9 @@
     color: black;
     margin-bottom: 2rem;
 }
-.main-header {
+.main-header h1 {
     font-family: "Heebo", "Arial";
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 1000;
     line-height: 94%;
 }
@@ -55,12 +55,7 @@
 .section-article {
     padding: 0 7rem;
 }
-.section h1 {
-    padding: 3rem 2rem;
-    font-family: "Vollkorn";
-    font-size: 3rem;
-    letter-spacing: 0.2;
-}
+
 .border-bottom {
     height: 15rem;
     max-width: 1300px;
@@ -83,11 +78,15 @@
 }
 @media only screen and (max-width: 650px) {
     .section {
-        height: 100vh;
+        min-height: 100vh;
+    }
+    .section-article {
+        min-height: 100vh;
+        padding: 0 3rem;
     }
     .main-header {
         font-family: "Heebo", "Arial";
-        font-size: 2rem;
+        font-size: 3rem;
         font-weight: 1000;
         line-height: 94%;
     }

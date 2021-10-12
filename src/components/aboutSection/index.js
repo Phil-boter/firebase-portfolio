@@ -1,12 +1,16 @@
+import "./style.css";
+
 export default function AboutSection({ language }) {
     return (
         <>
-            <section className="section">
-                <h1 className="main-header">
-                    {language === "en"
-                        ? "about".toUpperCase()
-                        : "Über mich".toUpperCase()}{" "}
-                </h1>
+            <section className="section about">
+                <div className="main-header about-header">
+                    <h1>
+                        {language === "en"
+                            ? "about".toUpperCase()
+                            : "Über mich".toUpperCase()}{" "}
+                    </h1>
+                </div>
                 <article className="section-article">
                     I am a junior full stack web developer with a background in
                     foodindustry and automotive service. I began my professional

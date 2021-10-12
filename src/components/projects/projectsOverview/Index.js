@@ -42,17 +42,24 @@ export default function ProjectsOverview({ projects }) {
     }
 
     return (
-        <div className="projects-main-container">
-            {language === "en" ? (
-                <h1>{"find out more".toUpperCase()}</h1>
-            ) : (
-                <h1>{"finde mehr heraus".toUpperCase()}</h1>
-            )}
-
-            {projects &&
-                projects.projectsData.map((project, index) => (
-                    <SingleProject key={index} project={project} />
-                ))}
-        </div>
+        <>
+            <section className="section">
+                <div className="main-header projects-main-header">
+                    {language === "en" ? (
+                        <h1>{"find out more".toUpperCase()}</h1>
+                    ) : (
+                        <h1>{"finde mehr heraus".toUpperCase()}</h1>
+                    )}
+                </div>
+                <div className="projects-main-container">
+                    {projects &&
+                        projects.projectsData.map((project, index) => (
+                            <SingleProject key={index} project={project} />
+                        ))}
+                </div>
+            </section>
+            {/* make section bottom curvy */}
+            <div className="border-bottom"></div>
+        </>
     );
 }
