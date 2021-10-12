@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { LanguageContext } from "../../../context/LanguageProvider";
 
 import "./style.css";
 
@@ -34,9 +32,7 @@ const SingleProject = ({ project }) => {
     );
 };
 
-export default function ProjectsOverview({ projects }) {
-    const { language, setLanguage, toggleLanguage } =
-        useContext(LanguageContext);
+export default function ProjectsOverview({ projects, language }) {
     if (!projects || projects.projectsData.length === 0) {
         return <p>Loadig...</p>;
     }

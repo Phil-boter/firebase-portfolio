@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 import EmailComponent from "../../components/email/Index";
 import MainPageProjects from "../../components/mainPageProjects/Index";

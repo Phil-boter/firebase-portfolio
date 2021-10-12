@@ -1,6 +1,20 @@
+import { useState } from "react";
+
+import EmailComponent from "../email/Index";
 import "./style.css";
 
 export default function ContactSection({ language }) {
+    const [click, setClick] = useState(false);
+
+    const handleClick = async (e) => {
+        e.preventDefault();
+
+        console.log("click");
+        setClick(true);
+        console.log(click);
+        window.scrollTo(0, 0);
+    };
+
     return (
         <>
             <section className="section ">
@@ -69,15 +83,23 @@ export default function ContactSection({ language }) {
                         {language === "en" ? (
                             <p>
                                 Interested in working with me? Feel free to{" "}
-                                <span className="link-mailto">reach out.</span>
+                                <span
+                                    className="link-mailto mail-link"
+                                    onClick={(e) => handleClick(e)}
+                                >
+                                    reach out.
+                                </span>
                             </p>
                         ) : (
                             <p>
                                 Daran interessiert mit mir zu arbeiten?<br></br>{" "}
                                 Dann{" "}
-                                <a href="/" className="link-mailto">
+                                <span
+                                    className="link-mailto mail-link"
+                                    onClick={(e) => handleClick(e)}
+                                >
                                     schreibe
-                                </a>{" "}
+                                </span>{" "}
                                 mir doch eine E-Mail.
                             </p>
                         )}{" "}
@@ -86,6 +108,9 @@ export default function ContactSection({ language }) {
             </section>
             {/* make section bottom curvy */}
             <div className="border-bottom"></div>
+            <div className={click ? "email-modal active-modal" : "email-modal"}>
+                <EmailComponent setClick={setClick} />
+            </div>
         </>
     );
 }

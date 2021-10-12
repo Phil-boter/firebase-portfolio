@@ -112,16 +112,14 @@ export default function Email({ setClick }) {
     };
 
     return (
-        <>
-            {language === "en" ? (
-                <h1 className="contact-form-header main-header">
-                    {"Get in contact".toUpperCase()}
-                </h1>
-            ) : (
-                <h1 className="contact-form-header main-header">
-                    {"schreibe mir eine Email".toUpperCase()}
-                </h1>
-            )}
+        <div>
+            <div className="contact-form-header main-header">
+                {language === "en" ? (
+                    <h1>{"Get in contact".toUpperCase()}</h1>
+                ) : (
+                    <h1>{"schreibe mir eine Email".toUpperCase()}</h1>
+                )}
+            </div>
             <div className="contact-form-container" id="contact-form-container">
                 <div className="contact-form-inner-container" id="emailSlider">
                     {!text ? (
@@ -129,6 +127,7 @@ export default function Email({ setClick }) {
                             {/* real fields */}
                             <label>Name</label>
                             <input
+                                id="imput-field-name"
                                 className="contact-form-input"
                                 autoComplete="on"
                                 type="text"
@@ -140,6 +139,7 @@ export default function Email({ setClick }) {
                             />
                             <label>Email</label>
                             <input
+                                id="imput-field-email"
                                 className="contact-form-input"
                                 autoComplete="on"
                                 type="email"
@@ -151,6 +151,7 @@ export default function Email({ setClick }) {
                             />
                             <label>Title</label>
                             <input
+                                id="input-field-title"
                                 className="contact-form-input"
                                 type="text"
                                 name="Title"
@@ -167,6 +168,7 @@ export default function Email({ setClick }) {
                             )}
 
                             <textarea
+                                id="input-textarea"
                                 className="contact-form-input contact-form-textarea"
                                 name="message"
                                 rows="9"
@@ -196,7 +198,7 @@ export default function Email({ setClick }) {
                                 className="ohnohoney"
                                 autoComplete="off"
                                 type="text"
-                                id="name"
+                                id="input-name-honeypot"
                                 name="name"
                                 placeholder="Your name here"
                                 onChange={(e) => honeypot(e)}
@@ -205,8 +207,8 @@ export default function Email({ setClick }) {
                             <input
                                 className="ohnohoney"
                                 autoComplete="off"
-                                type="email"
-                                id="email"
+                                type="emely"
+                                id="input-email-honeypot"
                                 name="email"
                                 placeholder="Your e-mail here"
                             />
@@ -224,6 +226,6 @@ export default function Email({ setClick }) {
                     )}
                 </div>
             </div>
-        </>
+        </div>
     );
 }

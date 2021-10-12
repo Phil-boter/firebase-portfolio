@@ -2,7 +2,7 @@ import "./App.css";
 import { DataProvider } from "./context/DataProvider";
 import { LanguageContext } from "./context/LanguageProvider";
 import React, { useState } from "react";
-import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // -------Inintializing fireBase--------------
 import firebase from "./Firebase/config";
@@ -60,6 +60,7 @@ function App() {
                             render={(props) => (
                                 <SingleProject
                                     projectId={props.match.params.id}
+                                    language={language}
                                 />
                             )}
                         />

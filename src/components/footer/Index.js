@@ -4,7 +4,6 @@ import { useState } from "react";
 import EmailComponent from "../email/Index";
 
 import "./style.css";
-import { Email } from "@material-ui/icons";
 
 export default function Footer({ language }) {
     const location = useLocation();
@@ -14,7 +13,7 @@ export default function Footer({ language }) {
     const handleClick = async (e) => {
         e.preventDefault();
         if (location.pathname === "/") {
-            document.getElementById("contact-form-container").scrollIntoView();
+            document.getElementById("scroll-point").scrollIntoView();
         } else {
             setClick(true);
 

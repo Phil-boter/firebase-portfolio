@@ -4,8 +4,7 @@ import { LanguageContext } from "../../context/LanguageProvider";
 import "./style.css";
 
 export default function Navigation() {
-    const { language, setLanguage, toggleLanguage } =
-        useContext(LanguageContext);
+    const { language, toggleLanguage } = useContext(LanguageContext);
 
     const [click, setClick] = useState(false);
 

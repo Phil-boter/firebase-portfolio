@@ -3,12 +3,12 @@ import { DataContext } from "../../context/DataProvider";
 
 import ProjectsOverview from "../../components/projects/projectsOverview/Index";
 
-export default function Projects() {
+export default function Projects({ language }) {
     const projects = useContext(DataContext);
     console.log("projects in route", projects.projectData);
     return (
         <>
-            <ProjectsOverview projects={projects} />
+            <ProjectsOverview projects={projects} language={language} />
         </>
     );
 }

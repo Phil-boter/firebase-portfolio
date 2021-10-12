@@ -46,7 +46,7 @@ const SingleProjectImage = ({ index, item, imageLink }) => {
 };
 
 let imageArray = [];
-const SingleProjectSection = ({ project, projectId, imageLink }) => {
+const SingleProjectSection = ({ project, projectId, imageLink, language }) => {
     const history = useHistory();
 
     imageArray.push(imageLink);

@@ -7,7 +7,7 @@
 }
 .contact-form-inner-container {
     min-width: 40%;
-    padding: 1rem;
+    padding: 0 1rem;
     background-color: var(--var-color_white);
     overscroll-behavior: contain;
 }

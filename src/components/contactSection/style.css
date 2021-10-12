@@ -1,6 +1,11 @@
 .contact-header {
     padding: 3rem;
 }
+
+.mail-link {
+    cursor: pointer;
+    text-decoration: underline;
+}
 @media only screen and (max-width: 650px) {
     .contact-header {
         padding: 2rem;

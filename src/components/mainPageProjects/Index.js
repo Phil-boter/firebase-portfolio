@@ -19,9 +19,9 @@ export default function MainPageProjects({ projects, language }) {
 
     return (
         <>
-            <h1 className="main-header main-project-header">
-                {translation.header.toUpperCase()}
-            </h1>
+            <div className="main-header main-project-header">
+                <h1>{translation.header.toUpperCase()}</h1>
+            </div>
             <div className="section-main-my-projects-wrapper">
                 <section className="section-main-my-projects">
                     {!projects || projects.projectsData.length === 0 ? (
@@ -59,10 +59,14 @@ export default function MainPageProjects({ projects, language }) {
                     )}
                 </section>
             </div>
-            <div className="button-container">
+            <div className="button-container" id="scroll-point">
                 <Link to="/projects">
                     <button className="button button-project-short">
                         {translation.button}
+                        <img
+                            src="/assets/arrow1.png"
+                            alt="arrow points right"
+                        />
                     </button>
                 </Link>
             </div>
