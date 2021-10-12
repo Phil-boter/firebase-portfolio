@@ -1,5 +1,5 @@
 .main-section {
-    min-height: 100vh;
+    min-height: 70vh;
     padding: 2em;
     margin: auto;
     background-color: var(--var-color_green);
@@ -102,13 +102,22 @@ header {
         object-fit: cover;
         min-height: 100vh !important;
     }
+    .main-section {
+        min-height: 100vh;
+    }
 }
 @media only screen and (orientation: portrait) {
     .container_image {
         /* Grab a free image from unsplash */
-        /* position the second container below the first container */
+        /* position the second container below the first container  */
         background-image: url(../../assets/milkyPortrait.jpg);
         object-fit: cover;
         min-height: 100vh !important;
+    }
+    .main-section {
+        min-height: 50vh;
+        padding: 2em;
+        margin: auto;
+        background-color: var(--var-color_green);
     }
 }

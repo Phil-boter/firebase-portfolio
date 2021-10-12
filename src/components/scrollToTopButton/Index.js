@@ -30,7 +30,7 @@ export default function ScrollToTopButton() {
                 <div className="scroll-top-button-container">
                     <div className="scroll-top-button" onClick={scrollTop}>
                         <img
-                            className="arrow"
+                            className="arrow scroll-to-top"
                             src="/assets/arrow1.png"
                             alt="arrow up"
                         />

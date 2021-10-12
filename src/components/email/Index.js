@@ -4,6 +4,7 @@ import { send } from "emailjs-com";
 import { UserID, ServiceID, TemplateID } from "../../Firebase/secrets.json";
 
 import { LanguageContext } from "../../context/LanguageProvider";
+
 import "./style.css";
 
 export default function Email({ setClick }) {
@@ -19,6 +20,32 @@ export default function Email({ setClick }) {
         Title: "",
         message: "",
     });
+
+    // _______________ translation for languageContext  _____________
+    let input = {};
+    if (language === "en") {
+        input = {
+            title: "Title",
+            text: "Write your message here",
+            submit: "Submit",
+            reset: "Close",
+            success: "Your email was successfully sent",
+            fail: "That did not work. Please try again later!",
+            required: "Please fill out every field!",
+        };
+    } else {
+        input = {
+            title: "Titel",
+            text: "Schreibe deine Nachricht hier",
+            submit: "Absenden",
+            reset: "Schliessen",
+            success: "Deine Email wurde erfolgreich verschickt!",
+            fail: "Das hat leider nicht funktioniert! Versuche es bitte später erneut",
+            required: "Bitte fülle jedes Feld aus!",
+        };
+    }
+
+    // _______________ translation for languageContext end  _____________
 
     const handleChange = (e) => {
         setRequired(null);
@@ -83,29 +110,6 @@ export default function Email({ setClick }) {
             setClick(false);
         }
     };
-
-    let input = {};
-    if (language === "en") {
-        input = {
-            title: "Title",
-            text: "Write your message here",
-            submit: "Submit",
-            reset: "Close",
-            success: "Your email was successfully sent",
-            fail: "That did not work. Please try again later!",
-            required: "Please fill out every field!",
-        };
-    } else {
-        input = {
-            title: "Titel",
-            text: "Schreibe deine Nachricht hier",
-            submit: "Absenden",
-            reset: "Schliessen",
-            success: "Deine Email wurde erfolgreich verschickt!",
-            fail: "Das hat leider nicht funktioniert! Versuche es bitte später erneut",
-            required: "Bitte fülle jedes Feld aus!",
-        };
-    }
 
     return (
         <>

@@ -13,12 +13,13 @@ export default function ContactSection({ language }) {
                     <article>
                         {language === "en"
                             ? "Find my code and my latest projects on"
-                            : "Schaue dir meinen Code und meine ProjeKte auf"}{" "}
-                        <span className="link-github">
+                            : "Schaue dir meinen Code und meine Projekte auf"}{" "}
+                        <span>
                             <a
                                 href="https://github.com/Phil-boter"
                                 target="blank"
                                 rel="noreferrer"
+                                className="link-github"
                             >
                                 Github
                             </a>
@@ -55,6 +56,7 @@ export default function ContactSection({ language }) {
                             target="blank"
                             type="download"
                             rel="noreferrer"
+                            className="link-CV"
                         >
                             CV
                         </a>
@@ -69,7 +71,8 @@ export default function ContactSection({ language }) {
                             </p>
                         ) : (
                             <p>
-                                Daran interessiert mit mir zu arbeiten? Dann{" "}
+                                Daran interessiert mit mir zu arbeiten?<br></br>{" "}
+                                Dann{" "}
                                 <a href="/" className="link-mailto">
                                     schreibe
                                 </a>{" "}

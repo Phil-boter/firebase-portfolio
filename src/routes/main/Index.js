@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 
 import EmailComponent from "../../components/email/Index";
+import MainPageProjects from "../../components/mainPageProjects/Index";
 import { DataContext } from "../../context/DataProvider";
 
 import "./style.css";
 
-export default function Main() {
+export default function Main({ language }) {
     const projects = useContext(DataContext);
 
     return (
@@ -32,7 +33,9 @@ export default function Main() {
                 className="text main-section"
                 data-index="2"
                 data-page="section"
-            ></section>
+            >
+                <MainPageProjects language={language} projects={projects} />
+            </section>
             <EmailComponent />
         </>
     );

@@ -1,0 +1,131 @@
+.main-project-header {
+    padding-top: 4rem;
+    color: var(--var-color_white);
+}
+
+.section-main-my-projects-wrapper {
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    z-index: 3 !important;
+    padding-top: 4rem;
+    width: 100%;
+}
+.section-main-my-projects {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: no-wrap;
+    z-index: 3 !important;
+}
+.project-short-inner-container {
+    margin: 2.6rem;
+    z-index: 3 !important;
+    /* margin: 0 auto; */
+    position: relative;
+    width: 100%;
+}
+figure {
+    width: 100%;
+}
+
+figure img {
+    display: block;
+    height: 300px;
+    object-fit: cover;
+    width: 300px;
+}
+
+figure::before {
+    background-image: linear-gradient(to top right, #1a1a1a, transparent);
+    left: 0;
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 300px;
+}
+
+figcaption {
+    margin: 0;
+    font-weight: bold;
+    font-size: 3em;
+    position: absolute;
+    bottom: 0.7em;
+    color: #ffffff;
+}
+/* .section-main-my-projects h4 {
+    text-align: center;
+    font-size: 1.3rem;
+} */
+/* .section-main-my-projects img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 auto;
+} */
+.section-main-my-projects a {
+    text-decoration: none;
+    color: var(--var-color_black);
+}
+.button-container {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    z-index: 1;
+    margin-top: 3rem;
+}
+.button-project-short {
+    margin: 1.5rem;
+    cursor: pointer;
+    background-color: var(--var-color_white);
+}
+
+@media only screen and (orientation: portrait) {
+    .section-main-my-projects-wrapper {
+        overflow-x: hidden;
+        text-align: center;
+    }
+
+    .section-main-my-projects {
+        overflow-x: scroll;
+        justify-content: unset;
+        flex-wrap: nowrap;
+    }
+    .project-short-inner-container {
+        margin: 5rem 2rem;
+    }
+    /* .project-short-inner-container img {
+        width: 300px;
+        height: 300px;
+    } */
+}
+
+@media only screen and (orientation: landscape) and (max-width: 849px) {
+    .project-short-inner-container {
+        width: 100vw;
+        margin: 2rem 5.5rem;
+    }
+    .section-main-my-projects-wrapper {
+        overflow-x: hidden;
+        text-align: center;
+    }
+
+    .section-main-my-projects {
+        overflow-x: scroll;
+        justify-content: unset;
+        flex-wrap: nowrap;
+    }
+    .project-short-inner-container {
+        margin: 5rem 2rem;
+    }
+}
+/*
+@media only screen and (orientation: portrait) and (max-width: 849px) {
+    .project-short-inner-container {
+        width: 100vw;
+        /margin: 2rem 6.7rem; 
+    }
+} */
