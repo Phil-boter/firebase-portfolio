@@ -22,8 +22,6 @@ import ScrollToTopButton from "./components/scrollToTopButton/Index";
 import Footer from "./components/footer/Index";
 
 function App() {
-    console.log("firebase", firebase);
-
     const [language, setLanguage] = useState("en");
 
     function toggleLanguage() {
