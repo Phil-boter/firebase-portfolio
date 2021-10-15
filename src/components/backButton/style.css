@@ -1,0 +1,7 @@
+.singleproject-button-container {
+    display: flex;
+    justify-content: center;
+}
+.singleproject-button {
+    margin: 1rem;
+}
