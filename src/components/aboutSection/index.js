@@ -4,14 +4,22 @@ export default function AboutSection({ language }) {
     return (
         <>
             <section className="section about">
-                <div className="main-header about-header">
-                    <h1>
-                        {language === "en"
-                            ? "about".toUpperCase()
-                            : "Über mich".toUpperCase()}{" "}
-                    </h1>
+                <div className="section-image">
+                    <img
+                        className="section-inner-image"
+                        src="/assets/content-pixie-iXRVqQtBa_8-unsplash.jpg"
+                        alt="book with title story of my life and laptop"
+                    />
                 </div>
+
                 <article className="section-article">
+                    <div className="main-header about-header">
+                        <h1>
+                            {language === "en"
+                                ? "about me".toUpperCase()
+                                : "Über mich".toUpperCase()}{" "}
+                        </h1>
+                    </div>
                     I am a junior full stack web developer with a background in
                     foodindustry and automotive service. I began my professional
                     career with an apprenticeship as a brewer, where I

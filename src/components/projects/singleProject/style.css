@@ -42,7 +42,6 @@
     color: var(--var-color_white);
 }
 .singleproject-main-section {
-    border: 1px solid black;
     margin-top: -19rem;
     display: flex;
     flex-direction: column;
@@ -123,14 +122,25 @@
         flex-direction: column;
         justify-content: center;
     }
-
-    .content-image-container {
+    .singleproject-article {
         display: flex;
-        /* flex-direction: column; */
+        flex-direction: column;
         align-items: center;
-        flex-wrap: wrap;
-        justify-content: center;
+        padding: 0 2rem;
     }
+    .singleproject-article p {
+        padding: 2rem 2rem;
+    }
+    .singleproject-article aside {
+        width: 300px;
+        height: 200px;
+    }
+
+    .content-image {
+        width: 300px;
+        height: 200px;
+    }
+
     .popup-picture {
         width: 95%;
     }

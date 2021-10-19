@@ -1,19 +1,19 @@
-.contact-header {
-    padding: 3rem;
-}
-
 .mail-link {
     cursor: pointer;
     text-decoration: underline;
 }
+
 @media only screen and (max-width: 650px) {
-    .contact-header {
+    /* .contact-header {
         padding: 2rem;
-    }
+    } */
     .contact-header h1 {
         font-size: 3rem;
     }
     .contact-article {
         padding: 0 2rem;
+    }
+    .qr-code-container {
+        border: 2px solid black;
     }
 }

@@ -22,23 +22,33 @@ export default function MainPageAbout({ language }) {
     return (
         <>
             <section className="section-main-about">
-                <div className="main-header">
-                    <h1>{translation.header.toUpperCase()}</h1>
-                </div>
-                <article className="about-article">
-                    <p>{translation.article}</p>
-                </article>
-                <div className="about-button-container">
-                    <Link to="/about">
-                        <label className="button about-button">
-                            {translation.button}
+                <div className="main-about-article-wrapper">
+                    <div className="main-header">
+                        <h1>{translation.header.toUpperCase()}</h1>
+                    </div>
+                    <article className="about-article">
+                        <p>{translation.article}</p>
 
-                            <img
-                                src="/assets/arrow1.png"
-                                alt="arrow points right"
-                            />
-                        </label>
-                    </Link>
+                        <div className="about-button-container">
+                            <Link to="/about">
+                                <button className="button about-button">
+                                    {translation.button}
+
+                                    <img
+                                        src="/assets/arrow1.png"
+                                        alt="arrow points right"
+                                    />
+                                </button>
+                            </Link>
+                        </div>
+                    </article>
+                </div>
+                <div className="section-image">
+                    <img
+                        className="section-inner-image"
+                        src="/assets/content-pixie-iXRVqQtBa_8-unsplash.jpg"
+                        alt=""
+                    />
                 </div>
             </section>
         </>

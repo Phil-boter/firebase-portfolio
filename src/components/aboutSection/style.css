@@ -1,10 +1,4 @@
-.about-header {
-    padding: 3rem;
-}
 @media only screen and (max-width: 650px) {
-    .about-header {
-        padding: 2rem;
-    }
     .about-header h1 {
         font-size: 3rem;
     }

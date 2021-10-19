@@ -28,7 +28,7 @@ export default function Email({ setClick }) {
             title: "Title",
             text: "Write your message here",
             submit: "Submit",
-            reset: "Close",
+            reset: "Reset",
             success: "Your email was successfully sent",
             fail: "That did not work. Please try again later!",
             required: "Please fill out every field!",
@@ -38,7 +38,7 @@ export default function Email({ setClick }) {
             title: "Titel",
             text: "Schreibe deine Nachricht hier",
             submit: "Absenden",
-            reset: "Schliessen",
+            reset: "Reset",
             success: "Deine Email wurde erfolgreich verschickt!",
             fail: "Das hat leider nicht funktioniert! Versuche es bitte später erneut",
             required: "Bitte fülle jedes Feld aus!",
@@ -112,7 +112,7 @@ export default function Email({ setClick }) {
     };
 
     return (
-        <div>
+        <div className="contact-form-main-container">
             <div className="contact-form-header main-header">
                 {language === "en" ? (
                     <h1>{"Get in contact".toUpperCase()}</h1>

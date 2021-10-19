@@ -18,14 +18,22 @@ export default function ContactSection({ language }) {
     return (
         <>
             <section className="section ">
-                <div className="main-header contact-header">
-                    <h1>
-                        {language === "en"
-                            ? "contact".toUpperCase()
-                            : "kontakt".toUpperCase()}{" "}
-                    </h1>
+                <div className="section-image">
+                    <img
+                        className="section-inner-image"
+                        src="/assets/denise-jans-p0QUpDUX8X8-unsplashsmall.jpg"
+                        alt=""
+                    />
                 </div>
+
                 <div className="section-article">
+                    <div className="main-header contact-header header-before">
+                        <h1>
+                            {language === "en"
+                                ? "get in contact".toUpperCase()
+                                : "kontakt".toUpperCase()}{" "}
+                        </h1>
+                    </div>
                     <article>
                         {language === "en"
                             ? "Find my code and my latest projects on"
@@ -53,7 +61,7 @@ export default function ContactSection({ language }) {
                             <p>
                                 Wenn Du an meiner Ausbildung und meinem
                                 professionellem Werdegang interessiert bist?
-                                Dann schaue doch mal auf meinem
+                                Dann schaue doch auf meinem
                             </p>
                         )}
                         <a
@@ -65,7 +73,7 @@ export default function ContactSection({ language }) {
                             LinkedIn
                         </a>
                         {language === "en"
-                            ? " profile or download my"
+                            ? " profile or download my "
                             : " Profil vorbei oder lade gleich hier meinen "}{" "}
                         <a
                             href="/assets/CV-ENG.pdf"
@@ -74,9 +82,11 @@ export default function ContactSection({ language }) {
                             rel="noreferrer"
                             className="link-CV"
                         >
-                            CV
+                            {language === "en" ? "here" : " hier "}
                         </a>
-                        {language === "de" ? " herunter." : ". "}
+                        {language === "en"
+                            ? " or scan the QR-Code below."
+                            : " oder scanne einfach den QR-Code. "}
                     </article>
                     <br></br>
                     <article>
@@ -104,10 +114,18 @@ export default function ContactSection({ language }) {
                             </p>
                         )}{" "}
                     </article>
+                    <br></br>
+                    <article className="qr-code-container">
+                        <img
+                            src="/assets/qrcode_philipp-dawid-portfolio.web.app.png"
+                            alt="qr-code to download cv"
+                            className="qr-code"
+                        />
+                    </article>
                 </div>
             </section>
             {/* make section bottom curvy */}
-            <div className="border-bottom"></div>
+            {/* <div className="border-bottom"></div> */}
             <div className={click ? "email-modal active-modal" : "email-modal"}>
                 <EmailComponent setClick={setClick} />
             </div>

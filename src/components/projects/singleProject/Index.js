@@ -25,7 +25,7 @@ const SingleProjectImage = ({ item, header }) => {
     const [picture, setPopUpPicture] = useState(false);
 
     return (
-        <>
+        <div>
             <img
                 className="content-image"
                 src={item}
@@ -40,34 +40,42 @@ const SingleProjectImage = ({ item, header }) => {
                     setPopUpPicture={setPopUpPicture}
                 />
             )}
-        </>
+        </div>
     );
 };
 
 const SingleProjectArticle = ({ project, index, header, item }) => {
-    console.log(item);
     return (
         <section>
             {index === 0 ? (
                 <>
-                    <h2 className="singleproject-article-header">
-                        {"description".toUpperCase()}
-                    </h2>
                     <div className="singleproject-article">
-                        <aside>
-                            <SingleProjectImage item={item} header={header} />
-                        </aside>
-                        <p>{project.description}</p>
+                        <div className="singleproject-content-image-container">
+                            <aside>
+                                <SingleProjectImage
+                                    item={item}
+                                    header={header}
+                                />
+                            </aside>
+                        </div>
+                        <div className="singleproject-article-content-container">
+                            <h2 className="singleproject-article-header">
+                                {"description".toUpperCase()}
+                            </h2>
+                            <p>{project.description}</p>
+                        </div>
                     </div>
                 </>
             ) : null}
             {index === 1 ? (
                 <>
-                    <h2 className="singleproject-article-header">
-                        {"technology".toUpperCase()}
-                    </h2>
                     <div className="singleproject-article">
-                        <p>{project.technology}</p>
+                        <div>
+                            <h2 className="singleproject-article-header">
+                                {"technology".toUpperCase()}
+                            </h2>
+                            <p>{project.technology}</p>
+                        </div>
                         <aside>
                             <SingleProjectImage item={item} header={header} />
                         </aside>
@@ -78,9 +86,6 @@ const SingleProjectArticle = ({ project, index, header, item }) => {
                 <>
                     {index === 2 ? (
                         <>
-                            <h2 className="singleproject-article-header">
-                                {"github".toUpperCase()}
-                            </h2>
                             <div className="singleproject-article">
                                 <aside>
                                     <SingleProjectImage
@@ -88,40 +93,47 @@ const SingleProjectArticle = ({ project, index, header, item }) => {
                                         header={header}
                                     />
                                 </aside>
-                                <p>
-                                    You can also look at the code belonging to
-                                    the app on
-                                    <span className="link-github">
-                                        <a
-                                            href={project.link}
-                                            rel="noreferrer"
-                                            target="_blank"
-                                        >
-                                            Github
-                                        </a>
-                                    </span>
-                                </p>
+                                <div>
+                                    <h2 className="singleproject-article-header">
+                                        {"github".toUpperCase()}
+                                    </h2>
+                                    <p>
+                                        You can also look at the code belonging
+                                        to the app on
+                                        <span className="link-github">
+                                            <a
+                                                href={project.link}
+                                                rel="noreferrer"
+                                                target="_blank"
+                                            >
+                                                Github
+                                            </a>
+                                        </span>
+                                    </p>
+                                </div>
                             </div>
                         </>
                     ) : (
                         <>
-                            <h2 className="singleproject-article-header">
-                                {"github".toUpperCase()}
-                            </h2>
                             <div className="singleproject-article">
-                                <p>
-                                    You can also look at the code belonging to
-                                    the app on
-                                    <span className="link-github">
-                                        <a
-                                            href={project.link}
-                                            rel="noreferrer"
-                                            target="_blank"
-                                        >
-                                            Github
-                                        </a>
-                                    </span>
-                                </p>
+                                <div>
+                                    <h2 className="singleproject-article-header">
+                                        {"github".toUpperCase()}
+                                    </h2>
+                                    <p>
+                                        You can also look at the code belonging
+                                        to the app on
+                                        <span className="link-github">
+                                            <a
+                                                href={project.link}
+                                                rel="noreferrer"
+                                                target="_blank"
+                                            >
+                                                Github
+                                            </a>
+                                        </span>
+                                    </p>
+                                </div>
                             </div>
                         </>
                     )}
@@ -129,43 +141,11 @@ const SingleProjectArticle = ({ project, index, header, item }) => {
             ) : null}
             {index === 3 ? (
                 <>
-                    {project.host ? (
-                        <>
-                            <h2 className="singleproject-article-header">
-                                {"Try It".toUpperCase()}
-                            </h2>
-                            <div className="singleproject-article">
-                                <p>
-                                    It is possible to try out the app live{" "}
-                                    <span className="link-linkedIn">
-                                        <a
-                                            href={project.host}
-                                            rel="noreferrer"
-                                            target="_blank"
-                                        >
-                                            here
-                                        </a>
-                                    </span>
-                                    .
-                                </p>
-                                <aside>
-                                    <SingleProjectImage
-                                        item={item}
-                                        header={header}
-                                    />
-                                </aside>
-                            </div>
-                        </>
-                    ) : (
-                        <div className="singleproject-article">
-                            <aside>
-                                <SingleProjectImage
-                                    item={item}
-                                    header={header}
-                                />
-                            </aside>
-                        </div>
-                    )}
+                    <div className="singleproject-article">
+                        <aside>
+                            <SingleProjectImage item={item} header={header} />
+                        </aside>
+                    </div>
                 </>
             ) : null}
         </section>
@@ -173,15 +153,13 @@ const SingleProjectArticle = ({ project, index, header, item }) => {
 };
 
 const SingleProjectSection = ({ project, language, imageArray }) => {
-    console.log("imagearray in Section ", imageArray);
-
     return (
         <div>
             {project && project.title !== undefined ? (
                 <>
                     <div className="singleproject-image-container">
                         <img
-                            className="singleproject-main-image modal-image slide-main"
+                            className="singleproject-main-image"
                             id="article-image"
                             src={project.image}
                             alt={project.title}
@@ -214,6 +192,29 @@ const SingleProjectSection = ({ project, language, imageArray }) => {
                                     item={item}
                                 />
                             ))}
+                            {project.host && (
+                                <>
+                                    <h2 className="singleproject-article-header">
+                                        {"Try It".toUpperCase()}
+                                    </h2>
+                                    <div className="singleproject-article">
+                                        <p>
+                                            It is possible to try out the app
+                                            live{" "}
+                                            <span className="link-linkedIn">
+                                                <a
+                                                    href={project.host}
+                                                    rel="noreferrer"
+                                                    target="_blank"
+                                                >
+                                                    here
+                                                </a>
+                                            </span>
+                                            .
+                                        </p>
+                                    </div>
+                                </>
+                            )}
                         </article>
                     </section>
                 </>
@@ -242,7 +243,6 @@ export default function SingleProjectComponent({ projectId, language }) {
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) {
-                console.log(docSnap.data());
                 setProject(docSnap.data());
                 // Now we get the references of these images+
                 const listRef = ref(storage, projectId);
@@ -274,7 +274,6 @@ export default function SingleProjectComponent({ projectId, language }) {
             .then((url) => {
                 setURL(url);
                 setImageArray((imageArray) => [...imageArray, url]);
-                console.log("imagearray ", imageArray);
             })
             .catch((error) => {
                 handleError();
@@ -297,7 +296,7 @@ export default function SingleProjectComponent({ projectId, language }) {
 
     return (
         <div className="single-project-main-container">
-            <div className=" single-project-main-inner-container">
+            <div className="single-project-main-inner-container">
                 <SingleProjectSection
                     projectId={projectId}
                     project={project}
