@@ -8,6 +8,7 @@
     --var-color_white: white;
     --var-color_black: black;
     --var-color_projectHeader: rgb(0, 64, 77);
+    --var-color_darkgray: rgb(19, 19, 19);
 }
 
 * {
@@ -104,7 +105,7 @@
     display: block;
 }
 .section-article {
-    background-color: rgb(19, 19, 19);
+    background-color: var(--var-color_darkgray);
     color: var(--var-color_white);
     width: 50%;
     height: auto;

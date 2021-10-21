@@ -5,10 +5,8 @@ export default function useIsDesktopHook() {
 
     const renderImage = (dimensions) => {
         if (dimensions.width > 840) {
-            console.log("desktop");
             setIsDesktop(true);
         } else {
-            console.log("mobile");
             setIsDesktop(false);
         }
     };

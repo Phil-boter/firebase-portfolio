@@ -20,7 +20,7 @@ export default function AboutSection({ language }) {
                     <div className="section-image">
                         <img
                             className="section-inner-image"
-                            src="/assets/content-pixie-iXRVqQtBa_8-unsplash.jpg"
+                            src="assets/content-pixie-iXRVqQtBa_8-unsplash.jpg"
                             alt="book with title story of my life and laptop"
                         />
                     </div>

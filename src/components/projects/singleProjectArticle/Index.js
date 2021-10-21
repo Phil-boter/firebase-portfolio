@@ -42,111 +42,79 @@ const SingleProjectArticle = ({ project, index, header, item, language }) => {
     return (
         <section>
             {index === 0 ? (
-                <>
-                    <div className="singleproject-article">
-                        <div className="singleproject-content-image-container">
-                            <aside>
-                                <SingleProjectImage
-                                    item={item}
-                                    header={header}
-                                />
-                            </aside>
-                        </div>
-                        <div className="singleproject-article-content-container">
-                            <ArticleHeader
-                                styling={"singleproject-article-header"}
-                                header={
-                                    language === "en"
-                                        ? "description".toUpperCase()
-                                        : "beschreibung".toUpperCase()
-                                }
-                            />
-
-                            <p>{project.description}</p>
-                        </div>
+                <div className="singleproject-article">
+                    <div className="singleproject-content-image-container">
+                        <aside>
+                            <SingleProjectImage item={item} header={header} />
+                        </aside>
                     </div>
-                </>
+                    <div className="singleproject-article-content-container">
+                        <ArticleHeader
+                            styling={"singleproject-article-header"}
+                            header={
+                                language === "en"
+                                    ? "description".toUpperCase()
+                                    : "beschreibung".toUpperCase()
+                            }
+                        />
+
+                        <p>
+                            {language === "en"
+                                ? project.desc_en
+                                : project.desc_de}
+                        </p>
+                    </div>
+                </div>
             ) : null}
             {index === 1 ? (
-                <>
-                    <div className="singleproject-article">
-                        <div>
-                            <ArticleHeader
-                                styling={"singleproject-article-header"}
-                                header={
-                                    language === "en"
-                                        ? "technology".toUpperCase()
-                                        : "technologie".toUpperCase()
-                                }
-                            />
-                            <p>{project.technology}</p>
-                        </div>
-                        <aside>
-                            <SingleProjectImage item={item} header={header} />
-                        </aside>
+                <div className="singleproject-article second-singleproject-article">
+                    <div>
+                        <ArticleHeader
+                            styling={"singleproject-article-header "}
+                            header={
+                                language === "en"
+                                    ? "technology".toUpperCase()
+                                    : "technologie".toUpperCase()
+                            }
+                        />
+                        <p>
+                            {language === "en"
+                                ? project.tech_en
+                                : project.tech_de}
+                        </p>
                     </div>
-                </>
+                    <aside>
+                        <SingleProjectImage item={item} header={header} />
+                    </aside>
+                </div>
             ) : null}
             {index === 2 ? (
-                <>
+                <div className="singleproject-article">
                     {index === 2 ? (
-                        <>
-                            <div className="singleproject-article">
-                                <aside>
-                                    <SingleProjectImage
-                                        item={item}
-                                        header={header}
-                                    />
-                                </aside>
-                                <div>
-                                    <ArticleHeader
-                                        styling={"singleproject-article-header"}
-                                        header={"github".toUpperCase()}
-                                    />
-
-                                    <p>
-                                        You can also look at the code belonging
-                                        to the app on{" "}
-                                        <LinkComponent
-                                            styling={"link-github try"}
-                                            link={project.link}
-                                            text={"GitHub"}
-                                        />
-                                    </p>
-                                </div>
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <div className="singleproject-article">
-                                <div>
-                                    <ArticleHeader
-                                        styling={"singleproject-article-header"}
-                                        header={"github".toUpperCase()}
-                                    />
-                                    <p>
-                                        You can also look at the code belonging
-                                        to the app on{" "}
-                                        <LinkComponent
-                                            styling={"link-github try"}
-                                            link={project.link}
-                                            text={"GitHub"}
-                                        />
-                                    </p>
-                                </div>
-                            </div>
-                        </>
-                    )}
-                </>
-            ) : null}
-            {index === 3 ? (
-                <>
-                    <div className="singleproject-article">
                         <aside>
                             <SingleProjectImage item={item} header={header} />
                         </aside>
+                    ) : null}
+                    <div>
+                        <ArticleHeader
+                            styling={"singleproject-article-header"}
+                            header={"github".toUpperCase()}
+                        />
+                        <p>
+                            {language === "en"
+                                ? "You can also look at the code belonging to the app on"
+                                : "Schaue Dir den zur App gehörenden Code auf"}
+                            <span>
+                                <LinkComponent
+                                    styling={"link-github try"}
+                                    link={project.link}
+                                    text={"GitHub"}
+                                />
+                            </span>
+                            {language === "en" ? null : "an"}
+                        </p>
                     </div>
-                </>
+                </div>
             ) : null}
         </section>
     );

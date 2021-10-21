@@ -8,6 +8,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
 }
 .projects-main-header h1 {
     font-family: "Heebo", "Arial";
@@ -28,8 +29,7 @@
 }
 
 .singleproject-image {
-    width: 220px;
-    height: 220px;
+    width: 19rem;
     object-fit: contain;
 }
 .singleproject-title {

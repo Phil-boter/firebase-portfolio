@@ -18,9 +18,6 @@ export function ResizeProvider({ children }) {
         height: window.innerHeight,
         width: window.innerWidth,
     });
-
-    console.log("dim in provider", dimensions);
-
     useEffect(() => {
         const debouncedHandleResize = debounce(function handleResize() {
             setDimensions({
