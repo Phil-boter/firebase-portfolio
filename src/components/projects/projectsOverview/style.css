@@ -1,5 +1,8 @@
+.section-image-project img {
+    object-fit: contain;
+}
+
 .projects-main-container {
-    padding: 2rem 2rem;
     max-width: 98vw;
     display: flex;
     flex-direction: row;
@@ -8,14 +11,16 @@
 }
 .projects-main-header h1 {
     font-family: "Heebo", "Arial";
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 1000;
     line-height: 94%;
     padding: 3rem;
+    background-color: var(--var-color_white);
+    color: var(--var-color_black);
 }
-/* .singleproject-main-container {
-    margin: 2rem;
-} */
+.singleproject-inner-container {
+    padding-bottom: 2rem;
+}
 
 .singleproject-main-container a {
     text-decoration: none;
@@ -25,16 +30,15 @@
 .singleproject-image {
     width: 220px;
     height: 220px;
-    object-fit: cover;
+    object-fit: contain;
 }
 .singleproject-title {
-    color: var(--var-color_white);
+    color: var(--var-color_black);
 }
 
 @media only screen and (max-width: 650px) {
-    .section {
-        background-color: var(--var-color_white);
-        color: var(--var-color_black);
+    .projects-main-container {
+        padding: 2rem 2rem;
     }
     .projects-main-header h1 {
         padding: 2rem;
@@ -50,6 +54,7 @@
     .singleproject-inner-container {
         display: flex;
         flex-direction: row;
+        padding: 0;
     }
     .singleproject-image {
         width: 7rem;

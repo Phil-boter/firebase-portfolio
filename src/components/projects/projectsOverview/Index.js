@@ -42,6 +42,7 @@ export default function ProjectsOverview({ projects, language }) {
     const [desktop, renderImage] = useIsDesktopHook(true);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         renderImage(dimensions);
     }, [dimensions, desktop, renderImage]);
 
@@ -50,32 +51,31 @@ export default function ProjectsOverview({ projects, language }) {
     }
     return (
         <>
-            {desktop && (
-                <div className="section-image">
-                    <img
-                        className="section-inner-image"
-                        src="/assets/oskar-yildiz-cOkpTiJMGzA-unsplash.jpg"
-                        alt=""
-                    />
-                </div>
-            )}
-            <section className="section">
+            <section className="section section-projectoverview">
+                {desktop && (
+                    <div className="section-image section-image-project">
+                        <img
+                            className="section-inner-image"
+                            src="/assets/oskar-yildiz-cOkpTiJMGzA-unsplash.jpg"
+                            alt=""
+                        />
+                    </div>
+                )}
                 <div className="main-header projects-main-header">
                     {language === "en" ? (
                         <h1>{"find out more".toUpperCase()}</h1>
                     ) : (
                         <h1>{"finde mehr heraus".toUpperCase()}</h1>
                     )}
-                </div>
-                <div className="projects-main-container">
-                    {projects &&
-                        projects.projectsData.map((project, index) => (
-                            <SingleProject key={index} project={project} />
-                        ))}
+
+                    <div className="projects-main-container">
+                        {projects &&
+                            projects.projectsData.map((project, index) => (
+                                <SingleProject key={index} project={project} />
+                            ))}
+                    </div>
                 </div>
             </section>
-            {/* make section bottom curvy */}
-            <div className="border-bottom"></div>
         </>
     );
 }

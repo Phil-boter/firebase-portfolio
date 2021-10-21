@@ -23,6 +23,7 @@ export default function ContactSection({ language }) {
     };
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         renderImage(dimensions);
     }, [dimensions, desktop, renderImage]);
 
@@ -48,9 +49,11 @@ export default function ContactSection({ language }) {
                         </h1>
                     </div>
                     <article>
-                        {language === "en"
-                            ? "Find my code and my latest projects on"
-                            : "Schaue dir meinen Code und meine Projekte auf"}{" "}
+                        {language === "en" ? (
+                            <p>Find my code and my latest projects on</p>
+                        ) : (
+                            <p>Schaue dir meinen Code und meine Projekte auf</p>
+                        )}{" "}
                         <span>
                             <a
                                 href="https://github.com/Phil-boter"
@@ -137,8 +140,7 @@ export default function ContactSection({ language }) {
                     </article>
                 </div>
             </section>
-            {/* make section bottom curvy */}
-            {/* <div className="border-bottom"></div> */}
+
             <div className={click ? "email-modal active-modal" : "email-modal"}>
                 <EmailComponent setClick={setClick} />
             </div>

@@ -4,7 +4,7 @@ export default function useIsDesktopHook() {
     const [desktop, setIsDesktop] = useState(true);
 
     const renderImage = (dimensions) => {
-        if (dimensions.width > 650) {
+        if (dimensions.width > 840) {
             console.log("desktop");
             setIsDesktop(true);
         } else {

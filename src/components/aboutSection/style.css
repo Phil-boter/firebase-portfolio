@@ -1,3 +1,12 @@
+.contact-section-link p {
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+}
+.contact-section-link {
+    cursor: pointer;
+}
 @media only screen and (max-width: 650px) {
     .about-header h1 {
         font-size: 3rem;

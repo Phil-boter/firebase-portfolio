@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import "./style.css";
-const BackButton = () => {
+const BackButton = ({ language }) => {
     const history = useHistory();
     return (
         <div className="singleproject-button-container">
@@ -8,7 +8,7 @@ const BackButton = () => {
                 onClick={() => history.goBack()}
                 className="button singleproject-button"
             >
-                back
+                {language === "en" ? "Back" : "Zurück"}
             </button>
         </div>
     );
