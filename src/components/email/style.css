@@ -1,12 +1,30 @@
-.contact-form-container {
-    height: 74vh;
-    z-index: 3;
+.email-main-wrapper {
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
+    width: 100vw;
+}
+
+.contact-form-main-container {
+    display: flex;
+    flex-direction: column;
+    width: 1920px;
+}
+
+.contact-form-header {
+    width: 100%;
+    padding: 3rem 2rem;
+    margin: 0;
+}
+
+.contact-form-container {
+    width: 100%;
+    z-index: 3;
 }
 .contact-form-inner-container {
-    min-width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
     padding: 0 1rem;
     background-color: var(--var-color_white);
     overscroll-behavior: contain;
@@ -18,14 +36,12 @@
     margin: 2rem;
 }
 
-.contact-form-header {
-    padding: 3rem;
-}
 .contact-form {
+    width: 60%;
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    margin: 0 auto;
 }
 
 .contact-form-input {
@@ -74,6 +90,7 @@
     flex-direction: column;
     margin-top: 10rem;
 }
+min-height: 100vh;
 .success-modal button {
     margin: 1.5rem;
 }
@@ -87,22 +104,15 @@
         padding: 3rem 2rem;
     }
     .contact-form-inner-container {
-        margin-top: 5rem;
-        margin-bottom: auto;
-        min-height: 100vh;
         max-width: 90%;
     }
 }
 @media only screen and (max-width: 650px) {
     .contact-form-container {
         height: 200%;
-        align-items: unset;
     }
-    .contact-form-inner-container {
-        margin-top: 8rem;
-        margin-bottom: auto;
-        min-height: 100vh;
-        max-width: 90%;
+    .contact-form {
+        width: 100%;
     }
     .contact-form-header {
         padding: 3rem 2rem;

@@ -1,8 +1,7 @@
 .main-section {
     min-height: 70vh;
     margin: auto;
-
-    background-color: var(--var-color_green);
+    max-width: 1920px;
 }
 body::-webkit-scrollbar {
     width: 0px;
@@ -115,7 +114,6 @@ header {
         min-height: 100vh !important;
     }
     .main-section {
-        min-height: 100vh;
         margin: auto;
     }
 }

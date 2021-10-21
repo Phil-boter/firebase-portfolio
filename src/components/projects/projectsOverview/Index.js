@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 
+import { useContext, useEffect } from "react";
+
+import { ResizeContext } from "../../../context/ResizeContext";
+import useIsDesktopHook from "../../../hooks/useIsDesktopHook";
+
 import "./style.css";
 
 const SingleProject = ({ project }) => {
@@ -33,12 +38,27 @@ const SingleProject = ({ project }) => {
 };
 
 export default function ProjectsOverview({ projects, language }) {
+    const { dimensions } = useContext(ResizeContext);
+    const [desktop, renderImage] = useIsDesktopHook(true);
+
+    useEffect(() => {
+        renderImage(dimensions);
+    }, [dimensions, desktop, renderImage]);
+
     if (!projects || projects.projectsData.length === 0) {
         return <p>Loadig...</p>;
     }
-
     return (
         <>
+            {desktop && (
+                <div className="section-image">
+                    <img
+                        className="section-inner-image"
+                        src="/assets/oskar-yildiz-cOkpTiJMGzA-unsplash.jpg"
+                        alt=""
+                    />
+                </div>
+            )}
             <section className="section">
                 <div className="main-header projects-main-header">
                     {language === "en" ? (

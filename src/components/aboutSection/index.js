@@ -1,16 +1,29 @@
+import { useEffect } from "react";
+import { useContext } from "react";
+import { useState } from "react";
+import { ResizeContext } from "../../context/ResizeContext";
+import useIsDesktopHook from "../../hooks/useIsDesktopHook";
 import "./style.css";
 
 export default function AboutSection({ language }) {
+    const { dimensions } = useContext(ResizeContext);
+    const [desktop, renderImage] = useIsDesktopHook(true);
+    useEffect(() => {
+        renderImage(dimensions);
+    }, [dimensions, desktop, renderImage]);
+
     return (
         <>
             <section className="section about">
-                <div className="section-image">
-                    <img
-                        className="section-inner-image"
-                        src="/assets/content-pixie-iXRVqQtBa_8-unsplash.jpg"
-                        alt="book with title story of my life and laptop"
-                    />
-                </div>
+                {desktop && (
+                    <div className="section-image">
+                        <img
+                            className="section-inner-image"
+                            src="/assets/content-pixie-iXRVqQtBa_8-unsplash.jpg"
+                            alt="book with title story of my life and laptop"
+                        />
+                    </div>
+                )}
 
                 <article className="section-article">
                     <div className="main-header about-header">

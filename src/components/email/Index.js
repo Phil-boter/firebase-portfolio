@@ -112,118 +112,127 @@ export default function Email({ setClick }) {
     };
 
     return (
-        <div className="contact-form-main-container">
-            <div className="contact-form-header main-header">
-                {language === "en" ? (
-                    <h1>{"Get in contact".toUpperCase()}</h1>
-                ) : (
-                    <h1>{"schreibe mir eine Email".toUpperCase()}</h1>
-                )}
-            </div>
-            <div className="contact-form-container" id="contact-form-container">
-                <div className="contact-form-inner-container" id="emailSlider">
-                    {!text ? (
-                        <form className="contact-form" id="reset">
-                            {/* real fields */}
-                            <label>Name</label>
-                            <input
-                                id="imput-field-name"
-                                className="contact-form-input"
-                                autoComplete="on"
-                                type="text"
-                                name="name"
-                                placeholder="Name"
-                                required
-                                value={toSend.name}
-                                onChange={handleChange}
-                            />
-                            <label>Email</label>
-                            <input
-                                id="imput-field-email"
-                                className="contact-form-input"
-                                autoComplete="on"
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                required
-                                value={toSend.email}
-                                onChange={handleChange}
-                            />
-                            <label>Title</label>
-                            <input
-                                id="input-field-title"
-                                className="contact-form-input"
-                                type="text"
-                                name="Title"
-                                placeholder={input.title}
-                                required
-                                value={toSend.Title}
-                                onChange={handleChange}
-                            />
-
-                            {language === "en" ? (
-                                <label>Message</label>
-                            ) : (
-                                <label>Nachricht</label>
-                            )}
-
-                            <textarea
-                                id="input-textarea"
-                                className="contact-form-input contact-form-textarea"
-                                name="message"
-                                rows="9"
-                                // cols="33"
-                                placeholder={input.text}
-                                required
-                                value={toSend.message}
-                                onChange={handleChange}
-                            />
-
-                            {requiredField}
-                            <button
-                                onClick={(e) => onSubmit(e)}
-                                className="button-contact-form send"
-                            >
-                                {input.submit}
-                            </button>
-                            <button
-                                onClick={(e) => resetForm(e)}
-                                className="button-contact-form"
-                            >
-                                {input.reset}
-                            </button>
-                            {/* HONEYPOT */}
-                            <label className="ohnohoney"></label>
-                            <input
-                                className="ohnohoney"
-                                autoComplete="off"
-                                type="text"
-                                id="input-name-honeypot"
-                                name="name"
-                                placeholder="Your name here"
-                                onChange={(e) => honeypot(e)}
-                            />
-                            <label className="ohnohoney"></label>
-                            <input
-                                className="ohnohoney"
-                                autoComplete="off"
-                                type="emely"
-                                id="input-email-honeypot"
-                                name="email"
-                                placeholder="Your e-mail here"
-                            />
-                        </form>
+        <div className="email-main-wrapper">
+            <div className="contact-form-main-container">
+                <div className="contact-form-header main-header">
+                    {language === "en" ? (
+                        <h1>{"Get in contact".toUpperCase()}</h1>
                     ) : (
-                        <div className="success-modal">
-                            {text}
-                            <button
-                                onClick={(e) => closeContactForm(e)}
-                                className="button-contact-form"
-                            >
-                                Ok
-                            </button>
-                        </div>
+                        <h1>{"schreibe mir eine Email".toUpperCase()}</h1>
                     )}
+                </div>
+
+                <div
+                    className="contact-form-container"
+                    id="contact-form-container"
+                >
+                    <div
+                        className="contact-form-inner-container"
+                        id="emailSlider"
+                    >
+                        {!text ? (
+                            <form className="contact-form" id="reset">
+                                {/* real fields */}
+                                <label>Name</label>
+                                <input
+                                    id="imput-field-name"
+                                    className="contact-form-input"
+                                    autoComplete="on"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    required
+                                    value={toSend.name}
+                                    onChange={handleChange}
+                                />
+                                <label>Email</label>
+                                <input
+                                    id="imput-field-email"
+                                    className="contact-form-input"
+                                    autoComplete="on"
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    required
+                                    value={toSend.email}
+                                    onChange={handleChange}
+                                />
+                                <label>Title</label>
+                                <input
+                                    id="input-field-title"
+                                    className="contact-form-input"
+                                    type="text"
+                                    name="Title"
+                                    placeholder={input.title}
+                                    required
+                                    value={toSend.Title}
+                                    onChange={handleChange}
+                                />
+
+                                {language === "en" ? (
+                                    <label>Message</label>
+                                ) : (
+                                    <label>Nachricht</label>
+                                )}
+
+                                <textarea
+                                    id="input-textarea"
+                                    className="contact-form-input contact-form-textarea"
+                                    name="message"
+                                    rows="9"
+                                    // cols="33"
+                                    placeholder={input.text}
+                                    required
+                                    value={toSend.message}
+                                    onChange={handleChange}
+                                />
+
+                                {requiredField}
+                                <button
+                                    onClick={(e) => onSubmit(e)}
+                                    className="button-contact-form send"
+                                >
+                                    {input.submit}
+                                </button>
+                                <button
+                                    onClick={(e) => resetForm(e)}
+                                    className="button-contact-form"
+                                >
+                                    {input.reset}
+                                </button>
+                                {/* HONEYPOT */}
+                                <label className="ohnohoney"></label>
+                                <input
+                                    className="ohnohoney"
+                                    autoComplete="off"
+                                    type="text"
+                                    id="input-name-honeypot"
+                                    name="name"
+                                    placeholder="Your name here"
+                                    onChange={(e) => honeypot(e)}
+                                />
+                                <label className="ohnohoney"></label>
+                                <input
+                                    className="ohnohoney"
+                                    autoComplete="off"
+                                    type="emely"
+                                    id="input-email-honeypot"
+                                    name="email"
+                                    placeholder="Your e-mail here"
+                                />
+                            </form>
+                        ) : (
+                            <div className="success-modal">
+                                {text}
+                                <button
+                                    onClick={(e) => closeContactForm(e)}
+                                    className="button-contact-form"
+                                >
+                                    Ok
+                                </button>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

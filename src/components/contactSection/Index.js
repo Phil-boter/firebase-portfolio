@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+
+import { ResizeContext } from "../../context/ResizeContext";
+import useIsDesktopHook from "../../hooks/useIsDesktopHook";
 
 import EmailComponent from "../email/Index";
+
 import "./style.css";
 
 export default function ContactSection({ language }) {
     const [click, setClick] = useState(false);
+
+    const { dimensions } = useContext(ResizeContext);
+    const [desktop, renderImage] = useIsDesktopHook(true);
 
     const handleClick = async (e) => {
         e.preventDefault();
@@ -15,16 +22,22 @@ export default function ContactSection({ language }) {
         window.scrollTo(0, 0);
     };
 
+    useEffect(() => {
+        renderImage(dimensions);
+    }, [dimensions, desktop, renderImage]);
+
     return (
         <>
             <section className="section ">
-                <div className="section-image">
-                    <img
-                        className="section-inner-image"
-                        src="/assets/denise-jans-p0QUpDUX8X8-unsplashsmall.jpg"
-                        alt=""
-                    />
-                </div>
+                {desktop && (
+                    <div className="section-image">
+                        <img
+                            className="section-inner-image"
+                            src="/assets/denise-jans-p0QUpDUX8X8-unsplashsmall.jpg"
+                            alt=""
+                        />
+                    </div>
+                )}
 
                 <div className="section-article">
                     <div className="main-header contact-header header-before">

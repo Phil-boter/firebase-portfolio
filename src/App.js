@@ -1,6 +1,7 @@
 import "./App.css";
 import { DataProvider } from "./context/DataProvider";
 import { LanguageContext } from "./context/LanguageProvider";
+import { ResizeProvider } from "./context/ResizeContext";
 import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -30,42 +31,44 @@ function App() {
     return (
         <BrowserRouter>
             <Switch>
-                <LanguageContext.Provider
-                    value={{ language, setLanguage, toggleLanguage }}
-                >
-                    <DataProvider>
-                        <Navigation />
+                <ResizeProvider>
+                    <LanguageContext.Provider
+                        value={{ language, setLanguage, toggleLanguage }}
+                    >
+                        <DataProvider>
+                            <Navigation />
 
-                        <Route
-                            exact
-                            path="/"
-                            render={() => <Main language={language} />}
-                        />
-                        <Route
-                            path="/projects"
-                            render={() => <Projects language={language} />}
-                        />
-                        <Route
-                            path="/contact"
-                            render={() => <Contact language={language} />}
-                        />
-                        <Route
-                            path="/about"
-                            render={() => <About language={language} />}
-                        />
-                        <Route
-                            path="/singleProject/:id"
-                            render={(props) => (
-                                <SingleProject
-                                    projectId={props.match.params.id}
-                                    language={language}
-                                />
-                            )}
-                        />
-                        <Footer language={language} />
-                        <ScrollToTopButton />
-                    </DataProvider>
-                </LanguageContext.Provider>
+                            <Route
+                                exact
+                                path="/"
+                                render={() => <Main language={language} />}
+                            />
+                            <Route
+                                path="/projects"
+                                render={() => <Projects language={language} />}
+                            />
+                            <Route
+                                path="/contact"
+                                render={() => <Contact language={language} />}
+                            />
+                            <Route
+                                path="/about"
+                                render={() => <About language={language} />}
+                            />
+                            <Route
+                                path="/singleProject/:id"
+                                render={(props) => (
+                                    <SingleProject
+                                        projectId={props.match.params.id}
+                                        language={language}
+                                    />
+                                )}
+                            />
+                            <Footer language={language} />
+                            <ScrollToTopButton />
+                        </DataProvider>
+                    </LanguageContext.Provider>
+                </ResizeProvider>
             </Switch>
         </BrowserRouter>
     );

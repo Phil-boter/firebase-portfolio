@@ -59,3 +59,8 @@
         top: 3.5rem;
     }
 }
+@media only screen and (max-width: 650px) and (orientation: landscape) {
+    .email-modal.active-modal {
+        height: 300vh;
+    }
+}

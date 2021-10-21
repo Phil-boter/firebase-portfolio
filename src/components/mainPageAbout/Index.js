@@ -33,7 +33,6 @@ export default function MainPageAbout({ language }) {
                             <Link to="/about">
                                 <button className="button about-button">
                                     {translation.button}
-
                                     <img
                                         src="/assets/arrow1.png"
                                         alt="arrow points right"
