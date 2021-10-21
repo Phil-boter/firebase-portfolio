@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-import { useContext } from "react";
-import { useState } from "react";
+import { useEffect, useContext } from "react";
+
 import { ResizeContext } from "../../context/ResizeContext";
 import useIsDesktopHook from "../../hooks/useIsDesktopHook";
 import "./style.css";

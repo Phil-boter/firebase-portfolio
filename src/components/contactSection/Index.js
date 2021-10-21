@@ -133,7 +133,7 @@ export default function ContactSection({ language }) {
                     <br></br>
                     <article className="qr-code-container">
                         <img
-                            src="/assets/qrcode_philipp-dawid-portfolio.web.app.png"
+                            src="/assets/qrcode_portfolio-philipp-dawid.web.app.png"
                             alt="qr-code to download cv"
                             className="qr-code"
                         />

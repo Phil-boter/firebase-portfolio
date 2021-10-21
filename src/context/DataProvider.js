@@ -20,7 +20,6 @@ export function DataProvider({ children }) {
                 const data = doc.data();
                 projects.push(data);
             });
-            console.log(projects);
             setCurrentProjectData(projects);
             setLoading(false);
         } catch (error) {
