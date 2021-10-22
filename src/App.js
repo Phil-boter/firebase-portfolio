@@ -25,19 +25,20 @@ import Footer from "./components/footer/Index";
 function App() {
     const [language, setLanguage] = useState("en");
 
+    const [showScroll, setShowScroll] = useState(false);
+
     function toggleLanguage() {
         setLanguage((language) => (language === "en" ? "de" : "en"));
     }
     return (
         <BrowserRouter>
-            <Switch>
-                <ResizeProvider>
-                    <LanguageContext.Provider
-                        value={{ language, setLanguage, toggleLanguage }}
-                    >
-                        <DataProvider>
-                            <Navigation />
-
+            <ResizeProvider>
+                <LanguageContext.Provider
+                    value={{ language, setLanguage, toggleLanguage }}
+                >
+                    <DataProvider>
+                        <Navigation />
+                        <Switch>
                             <Route
                                 exact
                                 path="/"
@@ -64,12 +65,15 @@ function App() {
                                     />
                                 )}
                             />
-                            <Footer language={language} />
-                            <ScrollToTopButton />
-                        </DataProvider>
-                    </LanguageContext.Provider>
-                </ResizeProvider>
-            </Switch>
+                        </Switch>
+                        <Footer language={language} />
+                        <ScrollToTopButton
+                            showScroll={showScroll}
+                            setShowScroll={setShowScroll}
+                        />
+                    </DataProvider>
+                </LanguageContext.Provider>
+            </ResizeProvider>
         </BrowserRouter>
     );
 }

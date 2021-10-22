@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import "./style.css";
 
-export default function ScrollToTopButton() {
-    const [showScroll, setShowScroll] = useState(false);
-
+export default function ScrollToTopButton({ showScroll, setShowScroll }) {
     const checkScrollTop = () => {
         if (!showScroll && window.pageYOffset > 400) {
             setShowScroll(true);
