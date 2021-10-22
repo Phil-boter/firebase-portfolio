@@ -5,7 +5,7 @@ import { shallow, mount, render } from "enzyme";
 
 import App from "./App";
 
-let wrapped = render(<App />);
+const wrapped = render(<App />);
 
 describe("App", () => {
     it("should render App component correctly", () => {
