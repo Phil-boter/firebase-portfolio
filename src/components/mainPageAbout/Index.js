@@ -5,7 +5,7 @@ export default function MainPageAbout({ language }) {
     let translation = {};
     if (language === "en") {
         translation = {
-            header: "get to know me!",
+            header: `get to know me!`,
             article:
                 "Do you want to know more about me or professional background? Then have a look at my about page.",
             button: "Visit About",

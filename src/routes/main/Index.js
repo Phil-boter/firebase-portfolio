@@ -6,6 +6,7 @@ import MainPageAbout from "../../components/mainPageAbout/Index";
 import { DataContext } from "../../context/DataProvider";
 
 import "./style.css";
+import Three from "../../components/three";
 
 export default function Main({ language }) {
     const projects = useContext(DataContext);
