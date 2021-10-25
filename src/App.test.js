@@ -1,14 +1,13 @@
 import React from "react";
 
-import { render } from "enzyme";
-// import toJson from "enzyme-to-json";
-
+import { render, mount } from "enzyme";
 import App from "./App";
 
-let wrapped = render(<App />);
-
 describe("App", () => {
+    let wrapper = render(<App />);
     it("should render App component correctly", () => {
-        expect(wrapped).toMatchSnapshot();
+        expect(wrapper).toMatchSnapshot();
     });
+    wrapper = mount(<App />).find(".app-test");
+    expect(wrapper.hasClass("app-test")).toEqual(true);
 });

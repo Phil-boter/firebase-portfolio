@@ -6,10 +6,9 @@ import ScrollToTopButton from "./Index";
 
 const showScroll = true;
 global.scrollTo = jest.fn();
-const windowOff = (window.pageYOffset = 401);
 
-let wrapper = shallow(<ScrollToTopButton showScroll={showScroll} />);
 describe("ScrolltoTpop component", () => {
+    let wrapper = shallow(<ScrollToTopButton showScroll={showScroll} />);
     it("should render the ScrollToTop Button", () => {
         expect(wrapper.find(".scroll-top-button").length).toBe(1);
     });

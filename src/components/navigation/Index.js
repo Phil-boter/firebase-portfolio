@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { LanguageContext } from "../../context/LanguageProvider";
 import "./style.css";
 
-export default function Navigation() {
-    const { language, toggleLanguage } = useContext(LanguageContext);
+export default function Navigation({ language, toggleLanguage }) {
+    // const { language, toggleLanguage } = useContext(LanguageContext);
 
     const [click, setClick] = useState(false);
 

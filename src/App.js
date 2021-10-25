@@ -31,50 +31,60 @@ function App() {
         setLanguage((language) => (language === "en" ? "de" : "en"));
     }
     return (
-        <BrowserRouter>
-            <ResizeProvider>
-                <LanguageContext.Provider
-                    value={{ language, setLanguage, toggleLanguage }}
-                >
-                    <DataProvider>
-                        <Navigation />
-                        <Switch>
-                            <Route
-                                exact
-                                path="/"
-                                render={() => <Main language={language} />}
+        <div className="app-test">
+            <BrowserRouter>
+                <ResizeProvider>
+                    <LanguageContext.Provider
+                        value={{ language, toggleLanguage }}
+                    >
+                        <DataProvider>
+                            <Navigation
+                                language={language}
+                                toggleLanguage={toggleLanguage}
+                                setLanguage={setLanguage}
                             />
-                            <Route
-                                path="/projects"
-                                render={() => <Projects language={language} />}
+                            <Switch>
+                                <Route
+                                    exact
+                                    path="/"
+                                    render={() => <Main language={language} />}
+                                />
+                                <Route
+                                    path="/projects"
+                                    render={() => (
+                                        <Projects language={language} />
+                                    )}
+                                />
+                                <Route
+                                    path="/contact"
+                                    render={() => (
+                                        <Contact language={language} />
+                                    )}
+                                />
+                                <Route
+                                    path="/about"
+                                    render={() => <About language={language} />}
+                                />
+                                <Route
+                                    path="/singleProject/:id"
+                                    render={(props) => (
+                                        <SingleProject
+                                            projectId={props.match.params.id}
+                                            language={language}
+                                        />
+                                    )}
+                                />
+                            </Switch>
+                            <Footer language={language} />
+                            <ScrollToTopButton
+                                showScroll={showScroll}
+                                setShowScroll={setShowScroll}
                             />
-                            <Route
-                                path="/contact"
-                                render={() => <Contact language={language} />}
-                            />
-                            <Route
-                                path="/about"
-                                render={() => <About language={language} />}
-                            />
-                            <Route
-                                path="/singleProject/:id"
-                                render={(props) => (
-                                    <SingleProject
-                                        projectId={props.match.params.id}
-                                        language={language}
-                                    />
-                                )}
-                            />
-                        </Switch>
-                        <Footer language={language} />
-                        <ScrollToTopButton
-                            showScroll={showScroll}
-                            setShowScroll={setShowScroll}
-                        />
-                    </DataProvider>
-                </LanguageContext.Provider>
-            </ResizeProvider>
-        </BrowserRouter>
+                        </DataProvider>
+                    </LanguageContext.Provider>
+                </ResizeProvider>
+            </BrowserRouter>
+        </div>
     );
 }
 

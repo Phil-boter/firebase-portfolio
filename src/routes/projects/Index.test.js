@@ -8,7 +8,7 @@ import ProjectsOverview from "../../components/projects/projectsOverview/Index";
 describe("Project Route", () => {
     const wrapper = shallow(<Project />);
 
-    it("should render the AboutSection", () => {
+    it("should render the ProjectOverView", () => {
         expect(wrapper.find(ProjectsOverview).length).toBe(1);
     });
 });
