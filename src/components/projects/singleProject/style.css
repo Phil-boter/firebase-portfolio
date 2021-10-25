@@ -79,6 +79,10 @@
 .content-image {
     width: 330px;
     height: 230px;
+    transition: all 0.2s ease-in-out;
+}
+.content-image:hover {
+    transform: scale(1.1);
 }
 .try a {
     font-size: 1.5rem;

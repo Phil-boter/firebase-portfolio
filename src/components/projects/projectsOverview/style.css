@@ -21,6 +21,8 @@
 }
 .singleproject-inner-container {
     padding-bottom: 2rem;
+
+    width: 19rem;
 }
 
 .singleproject-main-container a {
@@ -31,6 +33,10 @@
 .singleproject-image {
     width: 19rem;
     object-fit: cover;
+    transition: all 0.2s ease-in-out;
+}
+.singleproject-image:hover {
+    transform: scale(1.1);
 }
 .singleproject-title {
     color: var(--var-color_black);

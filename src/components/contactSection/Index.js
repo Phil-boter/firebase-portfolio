@@ -89,8 +89,8 @@ export default function ContactSection({ language }) {
                             LinkedIn
                         </a>
                         {language === "en"
-                            ? " profile or download my "
-                            : " Profil vorbei oder lade gleich hier meinen "}{" "}
+                            ? " profile or download my CV"
+                            : " Profil vorbei oder lade gleich"}{" "}
                         <a
                             href="/assets/CV-ENG.pdf"
                             target="blank"
@@ -102,7 +102,7 @@ export default function ContactSection({ language }) {
                         </a>
                         {language === "en"
                             ? " or scan the QR-Code below."
-                            : " oder scanne einfach den QR-Code. "}
+                            : "meinen CV herunter oder scanne einfach den QR-Code. "}
                     </article>
                     <br></br>
                     <article>

@@ -21,6 +21,7 @@
     position: absolute;
     right: 2.5rem;
     z-index: 101;
+    cursor: pointer;
 }
 .logo-nav {
     display: flex;
