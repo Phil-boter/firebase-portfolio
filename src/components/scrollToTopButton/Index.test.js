@@ -1,11 +1,10 @@
 import React from "react";
 
 import { shallow } from "enzyme";
-// import toJson from "enzyme-to-json";
+
 import ScrollToTopButton from "./Index";
 
 const showScroll = true;
-global.scrollTo = jest.fn();
 
 describe("ScrolltoTpop component", () => {
     let wrapper = shallow(<ScrollToTopButton showScroll={showScroll} />);

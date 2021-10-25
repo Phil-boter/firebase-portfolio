@@ -1,8 +1,10 @@
 import { shallow } from "enzyme";
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Router } from "react-router-dom";
 
-import { render, fireEvent, waitFor } from "@testing-library/react";
+import { createMemoryHistory } from "history";
+
+import { render, fireEvent, screen } from "@testing-library/react";
 
 import Navigation from "./Index.js";
 
@@ -14,30 +16,19 @@ describe("Navigation Component", () => {
     it("should render Navigation correctly", () => {
         expect(wrapper.find(".header").length).toBe(1);
     });
+
     it("should render language corectly en if language en", () => {
         let label = wrapper.find(".language-label");
         expect(label.text()).toEqual("en");
     });
+
     it("should render language corectly de if language de", () => {
         language = "de";
         const wrapper = shallow(<Navigation language={language} />);
         let label = wrapper.find(".language-label");
         expect(label.text()).toEqual("de");
     });
-    it("should change language in Click", async () => {
-        language = "en";
-        const { container } = render(
-            <BrowserRouter>
-                <Navigation language={language} />
-            </BrowserRouter>
-        );
-        fireEvent.click(container.querySelector(".language-label"));
-        await waitFor(() =>
-            expect(
-                container.querySelector(".language-label").innerHTML
-            ).toEqual("de")
-        );
-    });
+
     it("should open mobile menue when clicked", () => {
         const { container } = render(
             <BrowserRouter>
@@ -50,5 +41,47 @@ describe("Navigation Component", () => {
         expect(container.querySelector(".bar1")).toHaveStyle(
             "transform: rotate(45deg) translate(10.5px, 7.5px)"
         );
+    });
+
+    it("should render the navigation link contact which redirect to matching contact route", () => {
+        const history = createMemoryHistory();
+        history.push = jest.fn();
+
+        render(
+            <Router history={history}>
+                <Navigation language={language} />
+            </Router>
+        );
+
+        fireEvent.click(screen.getByTestId("contact"));
+        expect(history.push).toHaveBeenCalledWith("/contact");
+    });
+
+    it("should render the navigation link about which redirect to matching about route", () => {
+        const history = createMemoryHistory();
+        history.push = jest.fn();
+
+        render(
+            <Router history={history}>
+                <Navigation language={language} />
+            </Router>
+        );
+
+        fireEvent.click(screen.getByTestId("about"));
+        expect(history.push).toHaveBeenCalledWith("/about");
+    });
+
+    it("should render the navigation link project which redirect to projects route", () => {
+        const history = createMemoryHistory();
+        history.push = jest.fn();
+
+        render(
+            <Router history={history}>
+                <Navigation language={language} />
+            </Router>
+        );
+
+        fireEvent.click(screen.getByTestId("project"));
+        expect(history.push).toHaveBeenCalledWith("/projects");
     });
 });

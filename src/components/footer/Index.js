@@ -16,7 +16,6 @@ export default function Footer({ language }) {
             document.getElementById("scroll-point").scrollIntoView();
         } else {
             setClick(true);
-
             window.scrollTo(0, 0);
         }
     };
@@ -30,7 +29,7 @@ export default function Footer({ language }) {
             <section className="footer-container">
                 <article className="footer-article">
                     <span
-                        className="link-linkedIn"
+                        className="link-linkedIn GIT"
                         onClick={() =>
                             window.open("https://github.com/Phil-boter")
                         }
@@ -43,7 +42,7 @@ export default function Footer({ language }) {
                     </span>
 
                     <span
-                        className="link-linkedIn"
+                        className="link-linkedIn LINKEDIN"
                         onClick={() =>
                             window.open(
                                 "https://www.linkedin.com/in/philipp-dawid-759793206/"
@@ -58,7 +57,7 @@ export default function Footer({ language }) {
                     </span>
 
                     <span
-                        className="link-linkedIn"
+                        className="link-linkedIn MAILTO"
                         onClick={(e) =>
                             // window.open("mailto:philipp_dawid@web.de")
                             handleClick(e)

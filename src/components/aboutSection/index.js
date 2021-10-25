@@ -137,8 +137,6 @@ export default function AboutSection({ language }) {
                     </div>
                 </article>
             </section>
-            {/* make section bottom curvy */}
-            <div className="border-bottom"></div>
         </>
     );
 }

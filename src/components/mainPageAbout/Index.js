@@ -30,10 +30,11 @@ export default function MainPageAbout({ language }) {
                         <p>{translation.article}</p>
 
                         <div className="about-button-container">
-                            <Link to="/about">
+                            <Link to="/about" className="main-page-about-link">
                                 <button className="button about-button">
                                     {translation.button}
                                     <img
+                                        data-testid="main-about-image"
                                         src="/assets/arrow1.png"
                                         alt="arrow points right"
                                     />

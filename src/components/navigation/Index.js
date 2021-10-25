@@ -25,7 +25,7 @@ export default function Navigation({ language, toggleLanguage }) {
         <div className="header">
             <div className="logo-nav">
                 <div className="logo-container" onClick={closeMobileMenu}>
-                    <Link to="/">
+                    <Link to="/" data-testid="home">
                         <p className="logo-last">Dawid</p>
                         <p className="logo-first" data-end="P">
                             HILIP
@@ -34,14 +34,22 @@ export default function Navigation({ language, toggleLanguage }) {
                 </div>
                 <ul className={click ? "nav-options active" : "nav-options"}>
                     <li className="option" onClick={closeMobileMenu}>
-                        <Link to="/Contact" className="bg_slider link">
+                        <Link
+                            to="/contact"
+                            className="bg_slider link"
+                            data-testid="contact"
+                        >
                             {language === "en"
                                 ? "Contact".toUpperCase()
                                 : "Kontakt".toUpperCase()}
                         </Link>
                     </li>
                     <li className="option" onClick={closeMobileMenu}>
-                        <Link to="/about" className="bg_slider link">
+                        <Link
+                            to="/about"
+                            className="bg_slider link"
+                            data-testid="about"
+                        >
                             {language === "en" ? (
                                 "About".toUpperCase()
                             ) : (
@@ -56,7 +64,11 @@ export default function Navigation({ language, toggleLanguage }) {
                     </li>
 
                     <li className="option" onClick={closeMobileMenu}>
-                        <Link to="/projects" className="bg_slider link">
+                        <Link
+                            to="/projects"
+                            className="bg_slider link"
+                            data-testid="project"
+                        >
                             {language === "en"
                                 ? "projects".toUpperCase()
                                 : "projekte".toUpperCase()}

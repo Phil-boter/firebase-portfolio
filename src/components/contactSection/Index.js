@@ -8,10 +8,10 @@ import EmailComponent from "../email/Index";
 import "./style.css";
 
 export default function ContactSection({ language }) {
-    const [click, setClick] = useState(false);
-
     const { dimensions } = useContext(ResizeContext);
     const [desktop, renderImage] = useIsDesktopHook(true);
+
+    const [click, setClick] = useState(false);
 
     const handleClick = async (e) => {
         e.preventDefault();
@@ -28,7 +28,7 @@ export default function ContactSection({ language }) {
 
     return (
         <>
-            <section className="section ">
+            <section className="section">
                 {desktop && (
                     <div className="section-image">
                         <img
@@ -59,6 +59,7 @@ export default function ContactSection({ language }) {
                                 target="blank"
                                 rel="noreferrer"
                                 className="link-github"
+                                data-testid="link-github"
                             >
                                 Github
                             </a>
@@ -84,6 +85,7 @@ export default function ContactSection({ language }) {
                             href="https://www.linkedin.com/in/philipp-dawid-759793206/"
                             target="blank"
                             rel="noreferrer"
+                            data-testid="link-linkedin"
                         >
                             LinkedIn
                         </a>

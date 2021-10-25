@@ -1,38 +1,53 @@
 import React from "react";
+import { LanguageContext } from "../../context/LanguageProvider";
 
-import { shallow } from "enzyme";
-// import toJson from "enzyme-to-json";
 import Footer from "./Index";
-import { MemoryRouter } from "react-router";
+import { MemoryRouter } from "react-router-dom";
 
-let click;
+import { render, fireEvent, cleanup } from "@testing-library/react";
 
-const mockUseLocationValue = {
-    pathname: "/",
-    search: "",
+let location = {
     hash: "",
-    state: null,
+    path: "/",
+    search: "",
+    state: undefined,
+    key: "x774kd",
 };
-jest.mock("react-router", () => ({
-    ...jest.requireActual("react-router"),
-    useLocation: jest.fn().mockImplementation(() => {
-        return mockUseLocationValue;
-    }),
-}));
+let language = "en";
+
+afterEach(cleanup);
 
 describe("Footer component", () => {
-    mockUseLocationValue.pathname = "/contact";
-    const wrapper = shallow(<Footer />);
-    click = false;
+    const { container } = render(
+        <MemoryRouter location={location}>
+            <LanguageContext.Provider value={{ language }}>
+                <Footer language={language} />
+            </LanguageContext.Provider>
+        </MemoryRouter>
+    );
     it("should render the Footer", () => {
-        expect(wrapper.find(".footer-article").length).toBe(1);
+        expect(container.querySelector(".footer-article")).toBeInTheDocument();
     });
 
-    // it("scrolls to position top:0 when button is clicked", () => {
-    //     const scrollToSpy = jest.fn();
-    //     global.scrollTo = scrollToSpy;
-    //     wrapper.find(".scroll-top-button").simulate("click");
-    //     expect(scrollToSpy).toHaveBeenCalled();
-    //     expect(window.scrollTo).toBeCalledWith({ top: 0, behavior: "smooth" });
-    // });
+    it("should render button, that redirrct to about if Click", async () => {
+        const clickToSpy = jest.fn();
+        global.open = clickToSpy;
+        const { container } = render(
+            <MemoryRouter location={location}>
+                <LanguageContext.Provider value={{ language }}>
+                    <Footer language={language} />
+                </LanguageContext.Provider>
+            </MemoryRouter>
+        );
+
+        fireEvent.click(container.querySelector(".GIT"));
+        expect(clickToSpy).toHaveBeenCalled();
+        expect(window.open).toBeCalledWith("https://github.com/Phil-boter");
+
+        fireEvent.click(container.querySelector(".LINKEDIN"));
+        expect(clickToSpy).toHaveBeenCalled();
+        expect(window.open).toBeCalledWith(
+            "https://www.linkedin.com/in/philipp-dawid-759793206/"
+        );
+    });
 });
