@@ -42,7 +42,6 @@ export default function ProjectsOverview({ projects, language }) {
     const [desktop, renderImage] = useIsDesktopHook(true);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
         renderImage(dimensions);
     }, [dimensions, desktop, renderImage]);
 

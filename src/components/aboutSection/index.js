@@ -8,7 +8,6 @@ export default function AboutSection({ language }) {
     const { dimensions } = useContext(ResizeContext);
     const [desktop, renderImage] = useIsDesktopHook(true);
     useEffect(() => {
-        window.scrollTo(0, 0);
         renderImage(dimensions);
     }, [dimensions, desktop, renderImage]);
 
@@ -46,7 +45,6 @@ export default function AboutSection({ language }) {
                                 to obtain a diploma as a master brewer, which I
                                 successfully completed in 2008
                                 <br />
-                                <p></p>
                                 <br />
                                 After that I worked for the ARWE Group, until
                                 then europe's largest company in automotive
@@ -64,7 +62,6 @@ export default function AboutSection({ language }) {
                                 bootcamp at Spiced Academy to become a full
                                 stack web developer, I took it.
                                 <br />
-                                <p></p>
                                 <br />
                                 In this intensive 12 week course I dived into
                                 the depths of JavaScript. At Spiced Academy I
@@ -94,7 +91,6 @@ export default function AboutSection({ language }) {
                                 Berlin meine Ausbildung zum Diplom Braumeister,
                                 die ich 2008 erfolgreich abschloss.
                                 <br />
-                                <p></p>
                                 <br />
                                 Danach war ich bei der ARWE Group, dem bis dahin
                                 größten europäischen Unternehmen im
@@ -112,7 +108,6 @@ export default function AboutSection({ language }) {
                                 Academy teilzunehmen, um ein Full Stack
                                 Developer zu werden, habe ich sie ergriffen.{" "}
                                 <br />
-                                <p></p>
                                 <br />
                                 In diesem 12-wöchigen Intensivkurs tauchte ich
                                 in die Tiefen von JavaScript ein. An der SPICED

@@ -12,12 +12,14 @@ export default function ScrollToTopButton({ showScroll, setShowScroll }) {
     };
 
     const scrollTop = () => {
+        console.log("scroll top");
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     useEffect(() => {
         window.addEventListener("scroll", checkScrollTop);
         return function cleanup() {
+            console.log("scroll reset");
             window.removeEventListener("scroll", checkScrollTop);
         };
     });

@@ -23,7 +23,6 @@ export default function ContactSection({ language }) {
     };
 
     useEffect(() => {
-        window.scrollTo(0, 0);
         renderImage(dimensions);
     }, [dimensions, desktop, renderImage]);
 
