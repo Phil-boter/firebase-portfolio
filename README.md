@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# firebase-portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Small portfolio site
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+This app is a small portfolio site made with React.js. This site is serverless. Made with Google Firebase.
+For the database I have chosen Firestore. All images are stored in Firebase storage and loaded when needed.
 
-### `npm start`
+This site is completely responsive and can be used on mobile devices without any problems. To render mobile specific
+layout the React-Context-Api spies on the window.innerWidht in combination with a custom hook.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+There are also two langauges provided by React-Context-Api.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+And last but not least loading data from Google FireStorage, is also done by React-Context-Api instead of Redux, which is what I
+always used in my previous projects.
 
-### `npm test`
+To prevent regression and to maintain quality, test I wrote tests with Enzyme and React-Testing-Library.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+EmailJs offers the possibility to send emails from the client side. I have used this for a personal email contact form.
+This input module also has two input fields hidden from the normal user,
+which act as a honeypot, so that email bots are detected and prevented from sending emails.
 
-### `npm run build`
+You can visit my portfolio here
+https://portfolio-philipp-dawid.web.app
+if you are interested.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    HTML5, CSS3, JavaScript, React.js/Hooks, Enzyme, React-Testing-Library,
+    React-Context, Firebase, Firestore, Firebase storage, EmailJS
