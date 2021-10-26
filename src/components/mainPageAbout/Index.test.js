@@ -26,7 +26,7 @@ describe("MainPageAbout Component", () => {
             "/assets/content-pixie-iXRVqQtBa_8-unsplash.jpg"
         );
     });
-    it("should render button, that redirrct to about if Clicked", async () => {
+    it("should render button, that redirect to about if Clicked", async () => {
         const history = createMemoryHistory();
         history.push = jest.fn();
 

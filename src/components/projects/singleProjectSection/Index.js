@@ -1,4 +1,3 @@
-import BackButton from "../../backButton/Index";
 import LinkComponent from "../linkComponent/Index";
 import SingleProjectArticle from "../singleProjectArticle/Index";
 
@@ -52,7 +51,7 @@ export default function SingleProjectSection({
                             {project.host && (
                                 <>
                                     <div className="singleproject-article second-singleproject-article">
-                                        <h2 className="singleproject-article-header ">
+                                        <h2 className="singleproject-article-header second-singleproject-article-header TRY">
                                             {language === "en"
                                                 ? "Try It".toUpperCase()
                                                 : "probiere es aus".toUpperCase()}
@@ -102,7 +101,7 @@ export default function SingleProjectSection({
                 <p>Es muss hier irgendwo sein... </p>
             )}
             <div className="singleproject-button-container">
-                <Link to="/projects">
+                <Link to="/projects" className="LINKOVERVIEW">
                     <button className="button singleproject-button">
                         {language === "en" ? "Back" : "Zurück"}
                     </button>
