@@ -33,10 +33,12 @@ export default function MainPageProjects({ projects, language }) {
                                         className="project-short-inner-container "
                                     >
                                         <Link
+                                            id="main-page-projects-link"
                                             to={`/singleProject/${project.projectId}`}
                                         >
                                             <figure>
                                                 <img
+                                                    id="main-page-image-test"
                                                     src={project.image}
                                                     alt={project.title}
                                                 />
@@ -62,9 +64,9 @@ export default function MainPageProjects({ projects, language }) {
 
                 <div className="main-about-article-wrapper  main-project-article-wrapper">
                     <div className="main-header main-project-header">
-                        <h1>
+                        <h1 id="main-project-header-test">
                             {translation.header.toUpperCase()}
-                            <Link to="/projects">
+                            <Link to="/projects" id="main-page-redirect-test">
                                 <button className="button about-button button-project-short">
                                     {translation.button1}
                                     <img
