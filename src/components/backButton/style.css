@@ -1,7 +1,7 @@
-.singleproject-button-container {
+.back-button-container {
     display: flex;
     justify-content: center;
 }
-.singleproject-button {
+.back-button {
     margin: 1rem;
 }

@@ -3,10 +3,10 @@ import "./style.css";
 const BackButton = ({ language }) => {
     const history = useHistory();
     return (
-        <div className="singleproject-button-container">
+        <div className="back-button-container">
             <button
                 onClick={() => history.goBack()}
-                className="button singleproject-button"
+                className="button back-button"
             >
                 {language === "en" ? "Back" : "Zurück"}
             </button>

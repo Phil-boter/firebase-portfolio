@@ -102,6 +102,14 @@
     padding: 0 0.3rem;
 }
 
+.singleproject-button-container {
+    display: flex;
+    justify-content: center;
+}
+.singleproject-button {
+    margin: 1rem;
+}
+
 /* ------------pop-up-picture */
 .popup-picture-container {
     position: fixed;
