@@ -40,42 +40,44 @@ export default function SingleProjectComponent({ projectId, language }) {
         history.goBack();
     };
 
+    const getData = async () => {
+        // first get the project data from firestore
+        // after get the image-urls from fireStorage
+        // and download the afterwards
+        try {
+            const docRef = doc(db, "projects", projectId);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                console.log("project", docSnap.data());
+                setProject(docSnap.data());
+                // Now we get the references of these images+
+                const listRef = ref(storage, projectId);
+
+                listAll(listRef)
+                    .then((res) => {
+                        res.items.forEach((imageRef) => {
+                            // And finally display them
+
+                            displayImage(imageRef);
+                        });
+                    })
+                    .catch((error) => {
+                        handleError();
+                    });
+            } else {
+                // doc.data() will be undefined in this case
+                handleError();
+            }
+        } catch (err) {
+            console.log("no singleProject");
+        }
+    };
+
     useEffect(() => {
         window.scrollTo(0, 0);
         setImageArray([]);
 
-        const getData = async () => {
-            // first get the project data from firestore
-            // after get the image-urls from fireStorage
-            // and download the afterwards
-            try {
-                const docRef = doc(db, "projects", projectId);
-                const docSnap = await getDoc(docRef);
-
-                if (docSnap.exists()) {
-                    setProject(docSnap.data());
-                    // Now we get the references of these images+
-                    const listRef = ref(storage, projectId);
-
-                    listAll(listRef)
-                        .then((res) => {
-                            res.items.forEach((imageRef) => {
-                                // And finally display them
-
-                                displayImage(imageRef);
-                            });
-                        })
-                        .catch((error) => {
-                            handleError();
-                        });
-                } else {
-                    // doc.data() will be undefined in this case
-                    handleError();
-                }
-            } catch (err) {
-                console.log("no singleProject");
-            }
-        };
         getData();
     }, []);
 

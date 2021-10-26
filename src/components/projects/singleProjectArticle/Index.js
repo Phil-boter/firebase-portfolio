@@ -70,7 +70,9 @@ const SingleProjectArticle = ({ project, index, header, item, language }) => {
                 <div className="singleproject-article second-singleproject-article">
                     <div>
                         <ArticleHeader
-                            styling={"singleproject-article-header "}
+                            styling={
+                                "singleproject-article-header second-singleproject-article-header"
+                            }
                             header={
                                 language === "en"
                                     ? "technology".toUpperCase()

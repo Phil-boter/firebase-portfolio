@@ -9,6 +9,7 @@
     --var-color_black: black;
     --var-color_projectHeader: rgb(0, 64, 77);
     --var-color_darkgray: rgb(19, 19, 19);
+    --var-color_link: gold;
 }
 
 * {

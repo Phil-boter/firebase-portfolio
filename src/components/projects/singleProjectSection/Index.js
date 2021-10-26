@@ -49,12 +49,12 @@ export default function SingleProjectSection({
                             ))}
                             {project.host && (
                                 <>
-                                    <h2 className="singleproject-article-header">
-                                        {language === "en"
-                                            ? "Try It".toUpperCase()
-                                            : "probiere es aus".toUpperCase()}
-                                    </h2>
-                                    <div className="singleproject-article">
+                                    <div className="singleproject-article second-singleproject-article">
+                                        <h2 className="singleproject-article-header ">
+                                            {language === "en"
+                                                ? "Try It".toUpperCase()
+                                                : "probiere es aus".toUpperCase()}
+                                        </h2>
                                         {language === "en" ? (
                                             <p>
                                                 It is possible to try out the
