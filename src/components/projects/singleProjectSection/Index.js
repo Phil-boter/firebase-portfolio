@@ -2,6 +2,8 @@ import BackButton from "../../backButton/Index";
 import LinkComponent from "../linkComponent/Index";
 import SingleProjectArticle from "../singleProjectArticle/Index";
 
+import { Link } from "react-router-dom";
+
 export default function SingleProjectSection({
     project,
     language,
@@ -99,7 +101,13 @@ export default function SingleProjectSection({
             ) : (
                 <p>Es muss hier irgendwo sein... </p>
             )}
-            <BackButton language={language} />
+            <div className="singleproject-button-container">
+                <Link to="/projects">
+                    <button className="button singleproject-button">
+                        {language === "en" ? "Back" : "Zurück"}
+                    </button>
+                </Link>
+            </div>
         </div>
     );
 }
