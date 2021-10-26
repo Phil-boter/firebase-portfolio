@@ -1,10 +1,11 @@
 import React from "react";
-import { LanguageContext } from "../../context/LanguageProvider";
 
-import Footer from "./Index";
 import { MemoryRouter } from "react-router-dom";
 
 import { render, fireEvent, cleanup } from "@testing-library/react";
+
+import { LanguageContext } from "../../context/LanguageProvider";
+import Footer from "./Index";
 
 let location = {
     hash: "",

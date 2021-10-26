@@ -9,11 +9,6 @@ import ContactSection from "./Index.js";
 let language = "en";
 
 describe("MainPageAbout Component", () => {
-    // const Testcontainer = () => {
-    //     const { dimensions } = React.useContext(ResizeContext);
-    //     return <ContactSection />;
-    // };
-
     it("should render ContactSection", () => {
         const { container } = render(
             <ResizeProvider dimensions={{ height: 1000, widht: 1300 }}>
@@ -24,7 +19,7 @@ describe("MainPageAbout Component", () => {
         );
         expect(container.querySelector(".section")).toBeInTheDocument();
     });
-    it("should render Link, that redirrct to GitHub if Click", () => {
+    it("should render Link, that redirect to GitHub if Click", () => {
         const clickToSpy = jest.fn();
         global.open = clickToSpy;
         const { container } = render(

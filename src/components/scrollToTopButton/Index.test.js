@@ -6,12 +6,12 @@ import ScrollToTopButton from "./Index";
 
 const showScroll = true;
 
-describe("ScrolltoTpop component", () => {
+describe("ScrollToTopButton component", () => {
     let wrapper = shallow(<ScrollToTopButton showScroll={showScroll} />);
     it("should render the ScrollToTop Button", () => {
         expect(wrapper.find(".scroll-top-button").length).toBe(1);
     });
-    it("should not render the ScrollToTop Button when offset < 400", () => {
+    it("should not render the ScrollToTopButton when offset < 400", () => {
         let offWrapper = shallow(<ScrollToTopButton showScroll={false} />);
         expect(offWrapper.find(".scroll-top-button").length).toBe(0);
     });

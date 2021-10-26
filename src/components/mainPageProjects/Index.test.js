@@ -51,7 +51,7 @@ describe("MainPageProjects Component", () => {
             "YOU WANT TO EXPLORE MORE?More Projects"
         );
     });
-    it("should render MainpageProjects main image with src and alt", () => {
+    it("should render MainPageProjects main image with src and alt", () => {
         wrapper.find("#main-page-image-test");
         expect(wrapper.find("#main-page-image-test").length).toBe(1);
         expect(wrapper.find("#main-page-image-test").prop("src")).toEqual(

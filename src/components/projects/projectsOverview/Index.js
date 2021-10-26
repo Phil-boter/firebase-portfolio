@@ -10,7 +10,10 @@ import "./style.css";
 const SingleProject = ({ project }) => {
     return (
         <div className="singleproject-main-container">
-            <Link to={`/singleProject/${project.projectId}`}>
+            <Link
+                to={`/singleProject/${project.projectId}`}
+                id="project-overview-link-test"
+            >
                 <article className="singleproject-inner-container">
                     <img
                         className="singleproject-image"
@@ -56,7 +59,7 @@ export default function ProjectsOverview({ projects, language }) {
                         <img
                             className="section-inner-image"
                             src="/assets/oskar-yildiz-cOkpTiJMGzA-unsplash.jpg"
-                            alt=""
+                            alt="laptop in front of a window and a lamp at the right side"
                         />
                     </div>
                 )}

@@ -55,7 +55,7 @@ describe("SingleProjectSection Component", () => {
             wrapper.querySelector(".singleproject-main-section")
         ).toBeInTheDocument();
     });
-    it("should render Link Button, that redirect to porject overview", () => {
+    it("should render Link Button, that redirect to project overview", () => {
         const history = createMemoryHistory();
         history.push = jest.fn();
 

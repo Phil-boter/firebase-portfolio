@@ -17,7 +17,7 @@ describe("Navigation Component", () => {
         expect(wrapper.find(".header").length).toBe(1);
     });
 
-    it("should render language corectly en if language en", () => {
+    it("should render language correctly if language en", () => {
         let label = wrapper.find(".language-label");
         expect(label.text()).toEqual("en");
     });

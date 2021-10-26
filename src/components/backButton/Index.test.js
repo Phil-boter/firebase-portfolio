@@ -6,14 +6,14 @@ import { createMemoryHistory } from "history";
 import BackButton from "./Index.js";
 let language = "en";
 
-describe("AboutSection Component", () => {
+describe("BackButton Component", () => {
     const { container } = render(<BackButton language={language} />);
     it("should render the backbutton correctly", () => {
         expect(container.querySelector(".back-button").innerHTML).toEqual(
             "Back"
         );
     });
-    it("should render Link, that redirrct to GitHub if Click", () => {
+    it("should render Link, that redirect to GitHub if Click", () => {
         const history = createMemoryHistory();
         history.goBack = jest.fn();
         const { container } = render(
