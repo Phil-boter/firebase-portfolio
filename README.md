@@ -10,7 +10,7 @@ For the database I have chosen Firestore. All images are stored in Firebase stor
 This site is completely responsive and can be used on mobile devices without any problems. To render mobile specific
 layout the React-Context-Api spies on the window.innerWidht in combination with a custom hook.
 
-There are also two langauges provided by React-Context-Api.
+There are also two langauges available, provided by React-Context.
 
 And last but not least loading data from Google FireStorage, is also done by React-Context-Api instead of Redux, which is what I
 always used in my previous projects.
@@ -27,5 +27,5 @@ if you are interested.
 
 ## Technologies
 
-    HTML5, CSS3, JavaScript, React.js/Hooks, Enzyme, React-Testing-Library,
+    HTML5, CSS3, JavaScript, React.js, Enzyme, React-Testing-Library,
     React-Context, Firebase, Firestore, Firebase storage, EmailJS
