@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkComponent component should render LinkComponent correctly 1`] = `
+<span>
+  <a
+    rel="noreferrer"
+    target="_blank"
+  />
+</span>
+`;
