@@ -13,6 +13,15 @@ let language = "en";
 describe("Navigation Component", () => {
     const wrapper = shallow(<Navigation language={language} />);
 
+    it("should render Navigation correctly and match snapshot", () => {
+        const { container } = render(
+            <BrowserRouter>
+                <Navigation />
+            </BrowserRouter>
+        );
+        expect(container).toMatchSnapshot();
+    });
+
     it("should render Navigation correctly", () => {
         expect(wrapper.find(".header").length).toBe(1);
     });

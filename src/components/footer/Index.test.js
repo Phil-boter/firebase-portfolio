@@ -19,14 +19,25 @@ let language = "en";
 afterEach(cleanup);
 
 describe("Footer component", () => {
-    const { container } = render(
-        <MemoryRouter location={location}>
-            <LanguageContext.Provider value={{ language }}>
-                <Footer language={language} />
-            </LanguageContext.Provider>
-        </MemoryRouter>
-    );
-    it("should render the Footer", () => {
+    it("should render Footer and match snapshot", () => {
+        const { container } = render(
+            <MemoryRouter location={location}>
+                <LanguageContext.Provider value={{ language }}>
+                    <Footer language={language} />
+                </LanguageContext.Provider>
+            </MemoryRouter>
+        );
+        expect(container).toMatchSnapshot();
+    });
+
+    it("should have an container with a class of footer-article", () => {
+        const { container } = render(
+            <MemoryRouter location={location}>
+                <LanguageContext.Provider value={{ language }}>
+                    <Footer language={language} />
+                </LanguageContext.Provider>
+            </MemoryRouter>
+        );
         expect(container.querySelector(".footer-article")).toBeInTheDocument();
     });
 

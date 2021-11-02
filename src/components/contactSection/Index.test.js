@@ -9,6 +9,17 @@ import ContactSection from "./Index.js";
 let language = "en";
 
 describe("MainPageAbout Component", () => {
+    it("should render correctly and match snapshot", () => {
+        const { container } = render(
+            <ResizeProvider dimensions={{ height: 1000, widht: 1300 }}>
+                <LanguageContext.Provider value={language}>
+                    <ContactSection language={language} />
+                </LanguageContext.Provider>
+            </ResizeProvider>
+        );
+        expect(container).toMatchSnapshot();
+    });
+
     it("should render ContactSection", () => {
         const { container } = render(
             <ResizeProvider dimensions={{ height: 1000, widht: 1300 }}>

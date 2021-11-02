@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation Component should render Navigation correctly and match snapshot 1`] = `
+<div>
+  <div
+    class="header"
+  >
+    <div
+      class="logo-nav"
+    >
+      <div
+        class="logo-container"
+      >
+        <a
+          data-testid="home"
+          href="/"
+        >
+          <p
+            class="logo-last"
+          >
+            Dawid
+          </p>
+          <p
+            class="logo-first"
+            data-end="P"
+          >
+            HILIP
+          </p>
+        </a>
+      </div>
+      <ul
+        class="nav-options"
+      >
+        <li
+          class="option"
+        >
+          <a
+            class="bg_slider link"
+            data-testid="contact"
+            href="/contact"
+          >
+            KONTAKT
+          </a>
+        </li>
+        <li
+          class="option"
+        >
+          <a
+            class="bg_slider link"
+            data-testid="about"
+            href="/about"
+          >
+            <span
+              class="link"
+              style="white-space: nowrap;"
+            >
+              ÜBER MICH
+            </span>
+          </a>
+        </li>
+        <li
+          class="option"
+        >
+          <a
+            class="bg_slider link"
+            data-testid="project"
+            href="/projects"
+          >
+            PROJEKTE
+          </a>
+        </li>
+      </ul>
+    </div>
+    <label
+      class="language-label"
+    />
+    <div
+      class="mobile-menu"
+    >
+      <span
+        class="navigation-burger"
+      >
+        <div
+          class="bar1"
+        />
+        <div
+          class="bar3"
+        />
+        <div
+          class="bar3"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;

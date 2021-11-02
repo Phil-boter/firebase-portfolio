@@ -1,6 +1,6 @@
 import React from "react";
 
-import { shallow } from "enzyme";
+import { shallow, render } from "enzyme";
 
 import ScrollToTopButton from "./Index";
 
@@ -8,7 +8,12 @@ const showScroll = true;
 
 describe("ScrollToTopButton component", () => {
     let wrapper = shallow(<ScrollToTopButton showScroll={showScroll} />);
-    it("should render the ScrollToTop Button", () => {
+    it("should render ScrollToTopButton correctly and match snapshot", () => {
+        const { container } = render(<ScrollToTopButton />);
+        expect(container).toMatchSnapshot();
+    });
+
+    it("should render the ScrollToTop Button container", () => {
         expect(wrapper.find(".scroll-top-button").length).toBe(1);
     });
     it("should not render the ScrollToTopButton when offset < 400", () => {

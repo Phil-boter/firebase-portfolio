@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, render } from "enzyme";
 
 import ArticleHeader from "./Index.js";
 
@@ -7,6 +7,12 @@ let header = "test-header";
 let styling = "test-class";
 
 describe("Articleheader component", () => {
+    it("should render Articleheader correctly and match snapshot", () => {
+        let wrapper = render(
+            <ArticleHeader header={header} styling={styling} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
     it("should render H2 with classname='test-class'", () => {
         const wrapper = shallow(
             <ArticleHeader header={header} styling={styling} />

@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainPageProjects Component should render MainPageProjects correctly and match snapshot 1`] = `
+<div>
+  <section
+    class="section-main-about section-main-project"
+  >
+    <div
+      class="section-image section-image-project"
+    >
+      <div
+        class="section-main-my-projects-wrapper"
+      >
+        <section
+          class="section-main-my-projects"
+        >
+          <div
+            class="project-short-inner-container "
+          >
+            <a
+              href="/singleProject/12345"
+              id="main-page-projects-link"
+            >
+              <figure>
+                <img
+                  alt="test1"
+                  id="main-page-image-test"
+                  src="/assets/test1.png"
+                />
+                <figcaption>
+                  <h4>
+                    TEST1
+                  </h4>
+                  <h4>
+                    TEST2
+                  </h4>
+                </figcaption>
+              </figure>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div
+      class="main-about-article-wrapper  main-project-article-wrapper"
+    >
+      <div
+        class="main-header main-project-header"
+      >
+        <h1
+          id="main-project-header-test"
+        >
+          YOU WANT TO EXPLORE MORE?
+          <a
+            href="/projects"
+            id="main-page-redirect-test"
+          >
+            <button
+              class="button about-button button-project-short"
+            >
+              More Projects
+              <img
+                alt="arrow points right"
+                src="/assets/arrow1.png"
+              />
+            </button>
+          </a>
+        </h1>
+      </div>
+    </div>
+  </section>
+  <div
+    id="scroll-point"
+  />
+</div>
+`;

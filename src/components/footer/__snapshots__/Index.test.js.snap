@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component should render Footer and match snapshot 1`] = `
+<div>
+  <div
+    class="email-modal"
+  >
+    <div
+      class="email-main-wrapper"
+    >
+      <div
+        class="contact-form-main-container"
+      >
+        <div
+          class="contact-form-header main-header"
+        >
+          <h1>
+            GET IN CONTACT
+          </h1>
+        </div>
+        <div
+          class="contact-form-container"
+          id="contact-form-container"
+        >
+          <div
+            class="contact-form-inner-container"
+            id="emailSlider"
+          >
+            <form
+              class="contact-form"
+              id="reset"
+            >
+              <label>
+                Name
+              </label>
+              <input
+                autocomplete="on"
+                class="contact-form-input"
+                id="imput-field-name"
+                name="name"
+                placeholder="Name"
+                required=""
+                type="text"
+                value=""
+              />
+              <label>
+                Email
+              </label>
+              <input
+                autocomplete="on"
+                class="contact-form-input"
+                id="imput-field-email"
+                name="email"
+                placeholder="Email"
+                required=""
+                type="email"
+                value=""
+              />
+              <label>
+                Title
+              </label>
+              <input
+                class="contact-form-input"
+                id="input-field-title"
+                name="Title"
+                placeholder="Title"
+                required=""
+                type="text"
+                value=""
+              />
+              <label>
+                Message
+              </label>
+              <textarea
+                class="contact-form-input contact-form-textarea"
+                id="input-textarea"
+                name="message"
+                placeholder="Write your message here"
+                required=""
+                rows="9"
+              />
+              <button
+                class="button-contact-form send"
+              >
+                Submit
+              </button>
+              <button
+                class="button-contact-form"
+              >
+                Reset
+              </button>
+              <label
+                class="ohnohoney"
+              />
+              <input
+                autocomplete="off"
+                class="ohnohoney"
+                id="input-name-honeypot"
+                name="name"
+                placeholder="Your name here"
+                type="text"
+              />
+              <label
+                class="ohnohoney"
+              />
+              <input
+                autocomplete="off"
+                class="ohnohoney"
+                id="input-email-honeypot"
+                name="email"
+                placeholder="Your e-mail here"
+                type="emely"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section
+    class="footer-container"
+  >
+    <article
+      class="footer-article"
+    >
+      <span
+        class="link-linkedIn GIT"
+      >
+        <img
+          alt="github"
+          class="arrow slide-footer"
+          src="/assets/git.png"
+        />
+      </span>
+      <span
+        class="link-linkedIn LINKEDIN"
+      >
+        <img
+          alt="linkedIn"
+          class="arrow slide-footer"
+          src="/assets/linkedIn.png"
+        />
+      </span>
+      <span
+        class="link-linkedIn MAILTO"
+      >
+        <img
+          alt="mail"
+          class="arrow slide-footer"
+          src="/assets/mail.png"
+        />
+      </span>
+    </article>
+    <a
+      href="/contact"
+    >
+      <button
+        class="button"
+      >
+        Get in Contact
+      </button>
+    </a>
+  </section>
+</div>
+`;

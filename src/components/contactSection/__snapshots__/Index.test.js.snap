@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainPageAbout Component should render correctly and match snapshot 1`] = `
+<div>
+  <section
+    class="section"
+  >
+    <div
+      class="section-image"
+    >
+      <img
+        alt=""
+        class="section-inner-image"
+        src="/assets/denise-jans-p0QUpDUX8X8-unsplashsmall.jpg"
+      />
+    </div>
+    <div
+      class="section-article"
+    >
+      <div
+        class="main-header contact-header header-before"
+      >
+        <h1>
+          GET IN CONTACT
+           
+        </h1>
+      </div>
+      <article>
+        <p>
+          Find my code and my latest projects on
+        </p>
+         
+        <span>
+          <a
+            class="link-github"
+            data-testid="link-github"
+            href="https://github.com/Phil-boter"
+            rel="noreferrer"
+            target="blank"
+          >
+            Github
+          </a>
+        </span>
+         
+        . 
+      </article>
+      <br />
+      <article>
+        <p>
+          When you are interested in my educational background and professional experience visit my
+        </p>
+        <a
+          class="link-linkedIn"
+          data-testid="link-linkedin"
+          href="https://www.linkedin.com/in/philipp-dawid-759793206/"
+          rel="noreferrer"
+          target="blank"
+        >
+          LinkedIn
+        </a>
+         profile or download my CV
+         
+        <a
+          class="link-CV"
+          href="/assets/CV-ENG.pdf"
+          rel="noreferrer"
+          target="blank"
+          type="download"
+        >
+          here
+        </a>
+         or scan the QR-Code below.
+      </article>
+      <br />
+      <article>
+        <p>
+          Interested in working with me? Feel free to
+           
+          <span
+            class="link-mailto mail-link"
+          >
+            reach out.
+          </span>
+        </p>
+         
+      </article>
+      <br />
+      <article
+        class="qr-code-container"
+      >
+        <img
+          alt="qr-code to download cv"
+          class="qr-code"
+          src="/assets/qrcode_portfolio-philipp-dawid.web.app.png"
+        />
+      </article>
+    </div>
+  </section>
+  <div
+    class="email-modal"
+  >
+    <div
+      class="email-main-wrapper"
+    >
+      <div
+        class="contact-form-main-container"
+      >
+        <div
+          class="contact-form-header main-header"
+        >
+          <h1>
+            SCHREIBE MIR EINE EMAIL
+          </h1>
+        </div>
+        <div
+          class="contact-form-container"
+          id="contact-form-container"
+        >
+          <div
+            class="contact-form-inner-container"
+            id="emailSlider"
+          >
+            <form
+              class="contact-form"
+              id="reset"
+            >
+              <label>
+                Name
+              </label>
+              <input
+                autocomplete="on"
+                class="contact-form-input"
+                id="imput-field-name"
+                name="name"
+                placeholder="Name"
+                required=""
+                type="text"
+                value=""
+              />
+              <label>
+                Email
+              </label>
+              <input
+                autocomplete="on"
+                class="contact-form-input"
+                id="imput-field-email"
+                name="email"
+                placeholder="Email"
+                required=""
+                type="email"
+                value=""
+              />
+              <label>
+                Title
+              </label>
+              <input
+                class="contact-form-input"
+                id="input-field-title"
+                name="Title"
+                placeholder="Titel"
+                required=""
+                type="text"
+                value=""
+              />
+              <label>
+                Nachricht
+              </label>
+              <textarea
+                class="contact-form-input contact-form-textarea"
+                id="input-textarea"
+                name="message"
+                placeholder="Schreibe deine Nachricht hier"
+                required=""
+                rows="9"
+              />
+              <button
+                class="button-contact-form send"
+              >
+                Absenden
+              </button>
+              <button
+                class="button-contact-form"
+              >
+                Reset
+              </button>
+              <label
+                class="ohnohoney"
+              />
+              <input
+                autocomplete="off"
+                class="ohnohoney"
+                id="input-name-honeypot"
+                name="name"
+                placeholder="Your name here"
+                type="text"
+              />
+              <label
+                class="ohnohoney"
+              />
+              <input
+                autocomplete="off"
+                class="ohnohoney"
+                id="input-email-honeypot"
+                name="email"
+                placeholder="Your e-mail here"
+                type="emely"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

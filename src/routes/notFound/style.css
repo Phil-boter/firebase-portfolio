@@ -1,0 +1,17 @@
+.notfound-container {
+    padding-top: 4rem;
+}
+.notfound-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+.notfound-section h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+.notfound-section p {
+    padding: 1rem 2rem;
+}

@@ -9,6 +9,17 @@ import AboutSection from "./index.js";
 let language = "en";
 
 describe("AboutSection Component", () => {
+    it("should render AboutSection correctly and match sbnapshot", () => {
+        const { container } = render(
+            <ResizeProvider dimensions={{ height: 1000, widht: 1300 }}>
+                <LanguageContext.Provider value={language}>
+                    <AboutSection language={language} />
+                </LanguageContext.Provider>
+            </ResizeProvider>
+        );
+        expect(container).toMatchSnapshot();
+    });
+
     it("should render AboutSection", () => {
         const { container } = render(
             <ResizeProvider dimensions={{ height: 1000, widht: 1300 }}>

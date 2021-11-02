@@ -8,7 +8,7 @@ let text = "test-text";
 let styling = "test-class";
 
 describe("LinkComponent component", () => {
-    it("should render LinkComponent correctly", () => {
+    it("should render LinkComponent correctly to match snapshot", () => {
         let wrapper = render(<LinkComponent />);
         expect(wrapper).toMatchSnapshot();
     });
@@ -29,5 +29,6 @@ describe("LinkComponent component", () => {
             rel: "noreferrer",
             target: "_blank",
         });
+        expect(wrapper.find("a").prop("id")).toEqual("test-text");
     });
 });

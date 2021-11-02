@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainPageAbout Component should render correctly and match snapshot 1`] = `
+<div>
+  <section
+    class="section-main-about"
+  >
+    <div
+      class="main-about-article-wrapper"
+    >
+      <div
+        class="main-header"
+      >
+        <h1>
+          GET TO KNOW ME!
+        </h1>
+      </div>
+      <article
+        class="about-article"
+      >
+        <p>
+          Do you want to know more about me or professional background? Then have a look at my about page.
+        </p>
+        <div
+          class="about-button-container"
+        >
+          <a
+            class="main-page-about-link"
+            href="/about"
+          >
+            <button
+              class="button about-button"
+            >
+              Visit About
+              <img
+                alt="arrow points right"
+                data-testid="main-about-image"
+                src="/assets/arrow1.png"
+              />
+            </button>
+          </a>
+        </div>
+      </article>
+    </div>
+    <div
+      class="section-image"
+    >
+      <img
+        alt=""
+        class="section-inner-image"
+        src="/assets/content-pixie-iXRVqQtBa_8-unsplash.jpg"
+      />
+    </div>
+  </section>
+</div>
+`;

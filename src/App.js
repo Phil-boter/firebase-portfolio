@@ -15,6 +15,7 @@ import Main from "./routes/main/Index";
 import Contact from "./routes/contact/Index";
 import About from "./routes/about/Index";
 import SingleProject from "./routes/singleProject/Index";
+import NotFound from "./routes/notFound/Index";
 
 // _______importing Routes ___________________
 
@@ -22,7 +23,7 @@ import Navigation from "./components/navigation/Index";
 import ScrollToTopButton from "./components/scrollToTopButton/Index";
 import Footer from "./components/footer/Index";
 
-function App() {
+export default function App() {
     const [language, setLanguage] = useState("en");
 
     const [showScroll, setShowScroll] = useState(false);
@@ -74,6 +75,12 @@ function App() {
                                         />
                                     )}
                                 />
+                                <Route
+                                    path="*"
+                                    render={() => (
+                                        <NotFound language={language} />
+                                    )}
+                                />
                             </Switch>
                             <Footer language={language} />
                             <ScrollToTopButton
@@ -87,5 +94,3 @@ function App() {
         </div>
     );
 }
-
-export default App;

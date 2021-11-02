@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
 
-import { Router } from "react-router-dom";
+import { BrowserRouter, Router } from "react-router-dom";
 
 import { createMemoryHistory } from "history";
 
@@ -38,6 +38,15 @@ describe("MainPageProjects Component", () => {
     const wrapper = shallow(
         <MainPageProjects language={language} projects={projects} />
     );
+
+    it("should render MainPageProjects correctly and match snapshot", () => {
+        const { container } = render(
+            <BrowserRouter>
+                <MainPageProjects language={language} projects={projects} />
+            </BrowserRouter>
+        );
+        expect(container).toMatchSnapshot();
+    });
 
     it("should render MainPageProjects correctly", () => {
         expect(wrapper.find(".section-main-about").length).toBe(1);

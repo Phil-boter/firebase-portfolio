@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollToTopButton component should render ScrollToTopButton correctly and match snapshot 1`] = `undefined`;

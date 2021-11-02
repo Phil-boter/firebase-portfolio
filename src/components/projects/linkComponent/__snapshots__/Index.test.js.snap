@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LinkComponent component should render LinkComponent correctly 1`] = `
+exports[`LinkComponent component should render LinkComponent correctly to match snapshot 1`] = `
 <span>
   <a
     rel="noreferrer"

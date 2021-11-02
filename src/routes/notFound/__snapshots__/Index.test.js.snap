@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Route should render the NotFoundPage and match Snapshot 1`] = `
+<div
+  class="notfound-container"
+>
+  <section
+    class="notfound-section"
+  >
+    <h1>
+      SORRY!
+    </h1>
+    <article>
+      <p>
+        The page you have requested seems not to exist. You will be redirected to Mainpage
+      </p>
+    </article>
+  </section>
+</div>
+`;

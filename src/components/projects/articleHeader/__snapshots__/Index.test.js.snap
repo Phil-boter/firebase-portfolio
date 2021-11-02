@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Articleheader component should render Articleheader correctly and match snapshot 1`] = `
+<h2
+  class="test-class TEST-HEADER"
+>
+  test-header
+</h2>
+`;
