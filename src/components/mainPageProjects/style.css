@@ -36,6 +36,8 @@
     align-items: center;
     overflow-x: scroll;
     flex-wrap: nowrap;
+    scroll-snap-type: mandatory;
+    scroll-snap-type: x mandatory;
 }
 
 .section-main-my-projects a {
@@ -45,9 +47,10 @@
 .project-short-inner-container {
     position: relative;
 }
-.section-image-project {
+/* .section-image-project img {
     min-width: 50%;
-}
+    object-fit: contain;
+} */
 
 figure {
     width: 100%;
@@ -55,9 +58,8 @@ figure {
 
 figure img {
     display: block;
+    scroll-snap-align: start;
     height: 500px;
-    object-fit: cover;
-    width: 500px;
 }
 
 figure::before {
@@ -66,7 +68,7 @@ figure::before {
     content: "";
     height: 100%;
     position: absolute;
-    width: 500px;
+    width: 100%;
 }
 
 figcaption {
@@ -91,6 +93,20 @@ figcaption h4 {
     width: auto;
     background-color: var(--var-color_white);
 }
+@media screen and (max-width: 1030px) {
+    .section-image-project img {
+        /* min-width: 50%; */
+        object-fit: cover;
+    }
+    figure img {
+        height: 30rem;
+        width: 30rem;
+    }
+
+    figure::before {
+        width: 30rem;
+    }
+}
 
 @media only screen and (max-width: 849px) {
     .project-short-inner-container {
@@ -101,6 +117,7 @@ figcaption h4 {
         overflow-x: hidden;
         text-align: center;
     }
+
     .main-project-header {
         padding: 3rem 2rem;
     }
@@ -108,6 +125,19 @@ figcaption h4 {
         overflow-x: scroll;
         justify-content: unset;
         flex-wrap: nowrap;
+    }
+    .section-main-my-projects::-webkit-scrollbar {
+        display: none;
+    }
+    .section-image-project img {
+        object-fit: cover;
+    }
+    figure img {
+        width: 28rem;
+    }
+
+    figure::before {
+        width: 28rem;
     }
 }
 @media only screen and (max-width: 650px) {
@@ -126,11 +156,29 @@ figcaption h4 {
         flex-direction: column !important;
     }
     figure img {
-        height: 25rem;
-        width: 25rem;
+        height: 100%;
+        width: 24rem;
     }
 
     figure::before {
-        width: 25rem;
+        width: 24rem;
+    }
+}
+@media only screen and (max-width: 400px) {
+    figure img {
+        width: 22rem;
+    }
+
+    figure::before {
+        width: 22rem;
+    }
+}
+@media only screen and (max-width: 360px) {
+    figure img {
+        width: 21rem;
+    }
+
+    figure::before {
+        width: 21rem;
     }
 }
