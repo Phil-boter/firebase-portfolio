@@ -26,7 +26,7 @@
         "enzyme-to-json": "^3.6.2",
         "eslint": "^7.32.0",
         "eslint-plugin-react": "^7.26.1",
-        "firebase": "^9.2.0",
+        "firebase": "^9.9.4",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-router": "^5.2.1",
