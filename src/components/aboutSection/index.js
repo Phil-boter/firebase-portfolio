@@ -77,6 +77,21 @@ export default function AboutSection({ language }) {
                                 developing my first apps with react-native and
                                 Google Firebase. So feel free to have a look at
                                 some of my code on
+                                <span
+                                    className="link-github contact-section-link"
+                                        onClick={() =>
+                                            window.open("https://github.com/Phil-boter")
+                                        }
+                                    >
+                                     <p>Github.</p>
+                                              
+                                </span>
+                                <br />
+                                <br />
+                                I am currently working as a software developer at Accenture Industry X on a quality assurance tool for the automotive industry. 
+                                In this context, my field of activity includes the further development and maintenance of the frontend, 
+                                but also the handling of incidents in a DevOps environment. 
+                                CI/CD, release management and backend development are also part of my job.
                             </p>
                         ) : (
                             <p>
@@ -124,16 +139,25 @@ export default function AboutSection({ language }) {
                                 begonnen, meine ersten Apps mit React-Native und
                                 Google Firebase zu entwickeln. Schauen Sie sich
                                 also gerne einen Teil meines Codes auf{" "}
+                                <span
+                                    className="link-github contact-section-link"
+                                        onClick={() =>
+                                            window.open("https://github.com/Phil-boter")
+                                        }
+                                    >
+                                     <p>Github.</p>
+                                              
+                                </span>
+                                <br />
+                                <br />
+                                Derzeit arbeite ich als Software-Entwickler bei Accenture Industry X an einem Qualitätssicherungs-Tool für die Automobilindustrie. 
+                                Hierbei umfasst mein Tätigkeitsgebiet die Weiterentwicklung und Wartung des Frontends, 
+                                aber auch das Bearbeiten von Incidents im DevOps-Umfeld. 
+                                CI/CD, Releasemanagement und Backend-Entwicklung zählen ebenso zu meinen Tätigkeiten.
                             </p>
+
                         )}
-                        <span
-                            className="link-github contact-section-link"
-                            onClick={() =>
-                                window.open("https://github.com/Phil-boter")
-                            }
-                        >
-                            <p>Github.</p>
-                        </span>
+
                     </div>
                 </article>
             </section>
