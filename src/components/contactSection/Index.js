@@ -92,18 +92,29 @@ export default function ContactSection({ language }) {
                         {language === "en"
                             ? " profile or download my CV"
                             : " Profil vorbei oder lade gleich"}{" "}
+                        {language === "en" ? 
+                        // eslint-disable-next-line jsx-a11y/anchor-has-content
                         <a
                             href="/assets/CV-ENG.pdf"
                             target="blank"
                             type="download"
                             rel="noreferrer"
                             className="link-CV"
-                        >
-                            {language === "en" ? "here" : " hier "}
-                        </a>
+                        >here</a> : 
+                        // eslint-disable-next-line jsx-a11y/anchor-has-content
+                        <a
+                            href="/assets/CV-DE.pdf"
+                            target="blank"
+                            type="download"
+                            rel="noreferrer"
+                            className="link-CV"
+                        >hier</a>
+                        }
+                 
+                      
                         {language === "en"
                             ? " or scan the QR-Code below."
-                            : "meinen CV herunter oder scanne einfach den QR-Code. "}
+                            : " meinen CV herunter oder scanne einfach den QR-Code. "}
                     </article>
                     <br></br>
                     <article>
@@ -133,11 +144,19 @@ export default function ContactSection({ language }) {
                     </article>
                     <br></br>
                     <article className="qr-code-container">
-                        <img
-                            src="/assets/qrcode_portfolio-philipp-dawid.web.app.png"
-                            alt="qr-code to download cv"
-                            className="qr-code"
-                        />
+                        {language === "en" ? 
+                            <img
+                                src="/assets/qrcode_EN_portfolio-philipp-dawid.web.app.png"
+                                alt="qr-code to download cv"
+                                className="qr-code"
+                             />
+                        :
+                            <img
+                                src="/assets/qrcode_DE_portfolio-philipp-dawid.web.app.png"
+                                alt="qr-code to download cv"
+                                className="qr-code"
+                            />    
+                        }    
                     </article>
                 </div>
             </section>
