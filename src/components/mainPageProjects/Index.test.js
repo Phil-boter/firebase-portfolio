@@ -12,7 +12,7 @@ let language = "en";
 const projects = {
     projectsData: [
         {
-            projectId: "12345",
+            Id: "12345",
             images: [
                 "/assets/test2.png",
                 "/assets/test3.png",
@@ -22,13 +22,13 @@ const projects = {
                 seconds: 1634767200,
                 nanoseconds: 0,
             },
-            tech_de: "tech-de",
-            desc_en: "desc-en",
+            technology_de: "tech-de",
+            desccription_en: "desc-en",
             title: "test1",
             title_second: "test2",
             tech_en: "tech-en",
             link: "https://github.com/Phil-boter/social-network",
-            image: "/assets/test1.png",
+            main_image: "/assets/test1.png",
             desc_de: "desc-de",
         },
     ],

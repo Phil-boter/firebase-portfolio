@@ -91,7 +91,7 @@ exports[`MainPageAbout Component should render correctly and match snapshot 1`] 
         <img
           alt="qr-code to download cv"
           class="qr-code"
-          src="/assets/qrcode_portfolio-philipp-dawid.web.app.png"
+          src="/assets/qrcode_EN_portfolio-philipp-dawid.web.app.png"
         />
       </article>
     </div>

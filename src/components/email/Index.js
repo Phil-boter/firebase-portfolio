@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 
 import { send } from "emailjs-com";
-import { UserID, ServiceID, TemplateID } from "../../Firebase/secrets.json";
+import secrets from "../../utils/secrets.json"
 
 import { LanguageContext } from "../../context/LanguageProvider";
 
@@ -56,8 +56,8 @@ export default function Email({ setClick }) {
         // console.log("SEND");
         e.preventDefault();
         if (honey === true) {
-            // console.log("trapped in honeypot");
-            // closeContactForm();
+            console.log("trapped in honeypot");
+            closeContactForm();
             return;
         } else if (
             toSend.name === "" ||
@@ -67,14 +67,14 @@ export default function Email({ setClick }) {
         ) {
             setRequired(input.required);
         } else {
-            send(ServiceID, TemplateID, toSend, UserID).then(
+            send(secrets.ServiceID, secrets.TemplateID, toSend, secrets.UserID).then(
                 (result) => {
-                    // console.log("Email was send", result.text);
+                    console.log("Email was send", result.text);
                     // window.scrollTo(0, 0);
                     setText(input.success);
                 },
                 (error) => {
-                    // console.log("email sending failed", error.text);
+                    console.log("email sending failed", error.text);
 
                     setText(input.fail);
                 }

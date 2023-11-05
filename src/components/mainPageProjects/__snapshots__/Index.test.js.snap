@@ -18,7 +18,7 @@ exports[`MainPageProjects Component should render MainPageProjects correctly and
             class="project-short-inner-container "
           >
             <a
-              href="/singleProject/12345"
+              href="/singleProject/undefined"
               id="main-page-projects-link"
             >
               <figure>

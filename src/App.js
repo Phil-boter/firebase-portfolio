@@ -5,10 +5,6 @@ import { ResizeProvider } from "./context/ResizeContext";
 import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-// -------Inintializing fireBase--------------
-import firebase from "./Firebase/config";
-// -------Inintializing fireBase--------------
-
 // _______importing Routes ___________________
 import Projects from "./routes/projects/Index";
 import Main from "./routes/main/Index";
@@ -31,6 +27,7 @@ export default function App() {
     function toggleLanguage() {
         setLanguage((language) => (language === "en" ? "de" : "en"));
     }
+
     return (
         <div className="app-test">
             <BrowserRouter>
