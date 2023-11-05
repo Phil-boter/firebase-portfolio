@@ -34,12 +34,12 @@ export default function MainPageProjects({ projects, language }) {
                                     >
                                         <Link
                                             id="main-page-projects-link"
-                                            to={`/singleProject/${project.projectId}`}
+                                            to={`/singleProject/${project.id}`}
                                         >
                                             <figure>
                                                 <img
                                                     id="main-page-image-test"
-                                                    src={project.image}
+                                                    src={project.main_image}
                                                     alt={project.title}
                                                 />
 

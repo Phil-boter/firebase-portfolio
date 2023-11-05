@@ -11,14 +11,14 @@ const SingleProject = ({ project }) => {
     return (
         <div className="singleproject-main-container">
             <Link
-                to={`/singleProject/${project.projectId}`}
+                to={`/singleProject/${project.id}`}
                 id="project-overview-link-test"
             >
                 <article className="singleproject-inner-container">
                     <img
                         className="singleproject-image"
                         id="singleproject-image"
-                        src={project.image}
+                        src={project.main_image}
                         alt={project.title}
                     />
 

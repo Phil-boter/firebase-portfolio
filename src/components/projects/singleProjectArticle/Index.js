@@ -60,8 +60,8 @@ const SingleProjectArticle = ({ project, index, header, item, language }) => {
 
                         <p>
                             {language === "en"
-                                ? project.desc_en
-                                : project.desc_de}
+                                ? project.description_en
+                                : project.description_de}
                         </p>
                     </div>
                 </div>
@@ -81,8 +81,8 @@ const SingleProjectArticle = ({ project, index, header, item, language }) => {
                         />
                         <p>
                             {language === "en"
-                                ? project.tech_en
-                                : project.tech_de}
+                                ? project.technology_en
+                                : project.technology_de}
                         </p>
                     </div>
                     <aside>

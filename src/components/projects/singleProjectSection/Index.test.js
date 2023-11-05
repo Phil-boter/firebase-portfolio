@@ -29,9 +29,9 @@ const project = {
     ],
 };
 const imageArray = [
-    "https://firebasestorage.googleapis.com/v0/b/portfolio-philipp-dawid.appspot.com/o/DtwV1g82I9yuKZn4YCra%2Fmonkey2.png?alt=media&token=b6aa86c5-470c-4dbe-a0ef-79c0be145bfe",
-    "https://firebasestorage.googleapis.com/v0/b/portfolio-philipp-dawid.appspot.com/o/DtwV1g82I9yuKZn4YCra%2Fmonkey3.png?alt=media&token=1a6181de-c5cd-42ea-9735-ed0cd7c9e038",
-    "https://firebasestorage.googleapis.com/v0/b/portfolio-philipp-dawid.appspot.com/o/DtwV1g82I9yuKZn4YCra%2Fmonkey4.png?alt=media&token=6a6cb510-0acd-4f01-9f5a-d5d09ffc3950",
+    "/assets/monkey2.png",
+    "/assets/monkey3.png",
+    "/assets/monkey4.png",
 ];
 
 const { container } = render(

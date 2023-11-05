@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function SingleProjectSection({
     project,
-    language,
-    imageArray,
+    language
 }) {
     return (
         <div>
@@ -16,7 +15,7 @@ export default function SingleProjectSection({
                         <img
                             className="singleproject-main-image"
                             id="article-image"
-                            src={project.image}
+                            src={project.main_image}
                             alt={project.title}
                         />
                         <div className="single-project-header-container">
@@ -39,7 +38,7 @@ export default function SingleProjectSection({
                         id="single-project-main-section"
                     >
                         <article className="singleproject-main-article-container">
-                            {imageArray.map((item, index) => (
+                            {project.images.map((item, index) => (
                                 <SingleProjectArticle
                                     key={index}
                                     index={index}

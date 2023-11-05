@@ -9,7 +9,6 @@ import "./style.css";
 
 export default function Main({ language }) {
     const projects = useContext(DataContext);
-
     return (
         <>
             <header>
@@ -24,7 +23,7 @@ export default function Main({ language }) {
                 <div className="container container_image" aria-hidden="true">
                     <div className="title_wrapper header-text">
                         <h1 className="scrollPortfolio">
-                            Junior&nbsp;&nbsp;Full stack&nbsp;&nbsp;Web
+                            Full stack Web
                             Developer
                         </h1>
                     </div>
