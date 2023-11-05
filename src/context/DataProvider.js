@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from "react";
+import axios from "axios";
 
 
 export const DataContext = React.createContext();
@@ -8,27 +9,24 @@ export function DataProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     async function getProjects() {
+        try {
             let projects = [];
-            fetch("http://localhost:3500/v1/projects/allProjects")
-            .then((response) => {
-                if (!response.ok) {
-                  throw new Error(
-                    `This is an HTTP error: The status is ${response.status}`
-                  );
-                }
-                return response.json();
-              })
-              .then((data)=> {
-                console.log("data", data)
-                    projects = data.rows;
-                    setCurrentProjectData(projects);
-                    setLoading(false);
-                
-        })
+            const response = await axios.get("http://localhost:3500/v1/projects/allProjects");
+            console.log("rows", response)
+            if(response) {
+                projects = response.data.rows;
+                setCurrentProjectData(projects);
+                setLoading(false);
+            }
+        }
+        catch(err) {
+            throw new Error(
+                `This is an HTTP error: The status is ${err}`
+              );
+        }
     }
 
     useEffect(() => {
-        console.log("use effect")
         getProjects();
     }, []);
 
