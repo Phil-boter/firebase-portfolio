@@ -11,7 +11,7 @@ export function DataProvider({ children }) {
     async function getProjects() {
         try {
             let projects = [];
-            const response = await axios.get("http://localhost:3500/v1/projects/allProjects");
+            const response = await axios.get("https://philippdawid.ddns.net/v1/projects/allProjects");
             if(response) {
                 projects = response.data.rows;
                 setCurrentProjectData(projects);
