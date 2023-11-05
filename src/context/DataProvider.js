@@ -12,7 +12,6 @@ export function DataProvider({ children }) {
         try {
             let projects = [];
             const response = await axios.get("http://localhost:3500/v1/projects/allProjects");
-            console.log("rows", response)
             if(response) {
                 projects = response.data.rows;
                 setCurrentProjectData(projects);
